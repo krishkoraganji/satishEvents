@@ -1,0 +1,316 @@
+/* styles/global.css or src/index.css */
+
+/* ===== CSS Variables ===== */
+:root {
+  /* ===== Classy Color Palette - Earthy & Elegant ===== */
+  
+  /* Primary Colors - Sophisticated Navy */
+  --primary-color: #1e3a5f;        /* Deep navy blue */
+  --primary-dark: #0a2647;          /* Darker navy */
+  --primary-light: #2b4f7c;         /* Lighter navy */
+  --primary-bg: #f0f4fa;            /* Very light navy tint */
+  
+  /* Secondary Colors - Warm Terracotta */
+  --secondary-color: #b76e3c;       /* Warm terracotta */
+  --secondary-dark: #8e4b2c;        /* Darker terracotta */
+  --secondary-light: #d48c54;       /* Lighter terracotta */
+  --secondary-bg: #fdf4ed;          /* Light terracotta tint */
+  
+  /* Accent Colors */
+  --accent-gold: #c6a15b;           /* Antique gold */
+  --accent-gold-dark: #9e7b45;       /* Dark antique gold */
+  --accent-gold-light: #dbb67b;      /* Light antique gold */
+  --accent-gold-bg: #fcf5e8;         /* Gold tint */
+  
+  --accent-sage: #8ba888;            /* Sage green */
+  --accent-sage-dark: #5f7a5c;       /* Dark sage */
+  --accent-sage-light: #aec9ab;      /* Light sage */
+  --accent-sage-bg: #f1f7f0;         /* Sage tint */
+  
+  --accent-dusty-rose: #c4a29e;      /* Dusty rose */
+  --accent-dusty-rose-dark: #9e7d79; /* Dark dusty rose */
+  --accent-dusty-rose-light: #dbbcb8;/* Light dusty rose */
+  --accent-dusty-rose-bg: #fcf5f4;   /* Dusty rose tint */
+  
+  --accent-lavender: #9b8eb3;        /* Soft lavender */
+  --accent-lavender-dark: #7a6b92;   /* Dark lavender */
+  --accent-lavender-light: #b9abcf;  /* Light lavender */
+  --accent-lavender-bg: #f6f3fa;     /* Lavender tint */
+  
+  /* Success/Error/Warning - Muted Versions */
+  --success-color: #5f8b5f;          /* Muted green */
+  --success-dark: #3e5f3e;           /* Dark muted green */
+  --success-light: #7fa87f;          /* Light muted green */
+  --success-bg: #eef5ee;             /* Success tint */
+  
+  --warning-color: #c6a15b;          /* Antique gold (same as accent) */
+  --warning-dark: #9e7b45;           /* Dark antique gold */
+  --warning-light: #dbb67b;          /* Light antique gold */
+  --warning-bg: #fcf5e8;             /* Warning tint */
+  
+  --error-color: #c47e7e;            /* Muted coral */
+  --error-dark: #9e6161;             /* Dark muted coral */
+  --error-light: #daa5a5;            /* Light muted coral */
+  --error-bg: #fdf2f2;               /* Error tint */
+  
+  /* Neutral Colors - Warm Grays */
+  --white: #ffffff;
+  --black: #1a1a1a;
+  
+  --gray-1: #fcfcfc;
+  --gray-2: #f9f9f9;
+  --gray-3: #f5f5f5;
+  --gray-4: #f0f0f0;
+  --gray-5: #e0e0e0;
+  --gray-6: #c9c9c9;
+  --gray-7: #a8a8a8;
+  --gray-8: #808080;
+  --gray-9: #5e5e5e;
+  --gray-10: #3d3d3d;
+  --gray-11: #2d2d2d;
+  --gray-12: #1e1e1e;
+  
+  /* Text Colors - Warm and Readable */
+  --text-primary: #2d2d2d;           /* Dark gray for primary text */
+  --text-secondary: #5e5e5e;         /* Medium gray for secondary text */
+  --text-tertiary: #808080;          /* Light gray for tertiary text */
+  --text-disabled: #a8a8a8;          /* Disabled text */
+  --text-inverse: #ffffff;           /* White text on dark backgrounds */
+  
+  /* Background Colors */
+  --bg-primary: #ffffff;             /* Main background */
+  --bg-secondary: #fcf9f7;           /* Warm off-white */
+  --bg-tertiary: #faf5f2;            /* Warmer off-white */
+  --bg-overlay: rgba(0, 0, 0, 0.05); /* Light overlay */
+  --bg-overlay-dark: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  
+  /* Border Colors */
+  --border-light: #f0f0f0;
+  --border-medium: #e0e0e0;
+  --border-dark: #c9c9c9;
+  
+  /* ===== Typography ===== */
+  
+  /* Font Families */
+  --font-primary: 'Cormorant Garamond', 'Times New Roman', serif;    /* Elegant serif for headings */
+  --font-secondary: 'Montserrat', 'Helvetica Neue', sans-serif;      /* Clean sans-serif for body */
+  --font-accent: 'Playfair Display', 'Georgia', serif;               /* Decorative serif for accents */
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;   /* 12px */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-base: 1rem;    /* 16px */
+  --text-lg: 1.125rem;  /* 18px */
+  --text-xl: 1.25rem;   /* 20px */
+  --text-2xl: 1.5rem;   /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem;  /* 36px */
+  --text-5xl: 3rem;     /* 48px */
+  --text-6xl: 3.75rem;  /* 60px */
+  --text-7xl: 4.5rem;   /* 72px */
+  
+  /* Font Weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* Letter Spacing */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  
+  /* ===== Spacing ===== */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;  /* 4px */
+  --spacing-2: 0.5rem;   /* 8px */
+  --spacing-3: 0.75rem;  /* 12px */
+  --spacing-4: 1rem;     /* 16px */
+  --spacing-5: 1.25rem;  /* 20px */
+  --spacing-6: 1.5rem;   /* 24px */
+  --spacing-8: 2rem;     /* 32px */
+  --spacing-10: 2.5rem;  /* 40px */
+  --spacing-12: 3rem;    /* 48px */
+  --spacing-16: 4rem;    /* 64px */
+  --spacing-20: 5rem;    /* 80px */
+  --spacing-24: 6rem;    /* 96px */
+  --spacing-32: 8rem;    /* 128px */
+  
+  /* ===== Border Radius ===== */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;  /* 2px */
+  --radius-base: 0.25rem; /* 4px */
+  --radius-md: 0.375rem;  /* 6px */
+  --radius-lg: 0.5rem;    /* 8px */
+  --radius-xl: 0.75rem;   /* 12px */
+  --radius-2xl: 1rem;     /* 16px */
+  --radius-3xl: 1.5rem;   /* 24px */
+  --radius-full: 9999px;
+  
+  /* ===== Shadows ===== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  
+  /* ===== Transitions ===== */
+  --transition-fast: 150ms;
+  --transition-base: 300ms;
+  --transition-slow: 500ms;
+  --transition-slowest: 1000ms;
+  
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-timing-in: cubic-bezier(0.4, 0, 1, 1);
+  --transition-timing-out: cubic-bezier(0, 0, 0.2, 1);
+  
+  /* ===== Z-Index ===== */
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-auto: auto;
+  
+  /* ===== Container Widths ===== */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+}
+
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-secondary);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Typography Classes ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-4);
+}
+
+h1 {
+  font-size: var(--text-5xl);
+  letter-spacing: var(--tracking-tight);
+}
+
+h2 {
+  font-size: var(--text-4xl);
+  letter-spacing: var(--tracking-tight);
+}
+
+h3 {
+  font-size: var(--text-3xl);
+}
+
+h4 {
+  font-size: var(--text-2xl);
+}
+
+h5 {
+  font-size: var(--text-xl);
+}
+
+h6 {
+  font-size: var(--text-lg);
+}
+
+p {
+  margin-bottom: var(--spacing-4);
+  color: var(--text-secondary);
+}
+
+/* ===== Link Styles ===== */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-fast) var(--transition-timing);
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+/* ===== Button Base Styles ===== */
+button {
+  cursor: pointer;
+  font-family: var(--font-secondary);
+}
+
+/* ===== Utility Classes ===== */
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Colors */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+.text-inverse { color: var(--text-inverse); }
+
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-tertiary { background-color: var(--bg-tertiary); }
+
+/* Spacing */
+.m-0 { margin: 0; }
+.p-0 { padding: 0; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: var(--text-4xl);
+  }
+  
+  h2 {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* ===== Import Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
