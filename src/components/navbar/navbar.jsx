@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Layout, Menu, Button, Drawer } from 'antd';
 import { MenuOutlined, PhoneOutlined } from '@ant-design/icons';
+import logo from "../../assests/satish/logo.jpeg";
 import './navbar.css';
 
 const { Header } = Layout;
@@ -35,10 +36,6 @@ const Navbar = () => {
       key: '/wedding-decor', 
       label: <Link to="/wedding-decor">Wedding Decor</Link> 
     },
-    // { 
-    //   key: '/corporate-events', 
-    //   label: <Link to="/corporate-events">Corporate</Link> 
-    // },
     { 
       key: '/birthday-parties', 
       label: <Link to="/birthday-parties">Birthday</Link> 
@@ -75,9 +72,12 @@ const Navbar = () => {
     <Header className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="logo">
-          <Link to="/">
-            <span className="logo-text">SatishEvents</span>
-            <span className="logo-tagline">Creating Magical Moments</span>
+          <Link to="/" className="logo-link">
+            <img src={logo} alt="Satish Events" className="logo-image" />
+            <div className="logo-text-wrapper">
+              <span className="logo-text">SatishEvents</span>
+              <span className="logo-tagline">Creating Magical Moments</span>
+            </div>
           </Link>
         </div>
 
@@ -106,7 +106,12 @@ const Navbar = () => {
             className="mobile-menu-btn"
           />
           <Drawer
-            title={<span className="drawer-title">Menu</span>}
+            title={
+              <div className="drawer-header">
+                <img src={logo} alt="Satish Events" className="drawer-logo" />
+                <span className="drawer-title">Menu</span>
+              </div>
+            }
             placement="right"
             onClose={() => setVisible(false)}
             open={visible}
