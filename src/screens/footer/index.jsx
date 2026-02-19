@@ -71,15 +71,15 @@ const AppFooter = () => {
               <ul className="contact-info">
                 <li>
                   <EnvironmentOutlined />
-                  <span>123 Event Street, Mumbai - 400001</span>
+                  <span>Chittinagar,Vijayawada,520001, India</span>
                 </li>
                 <li>
                   <PhoneOutlined />
-                  <span>+91 98765 43210</span>
+                  <span>+91 8886852544</span>
                 </li>
                 <li>
                   <MailOutlined />
-                  <span>info@satishevents.com</span>
+                  <span>satishevents19@gmail.com</span>
                 </li>
               </ul>
             </div>

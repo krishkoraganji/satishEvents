@@ -1,6 +1,7 @@
 /* components/navbar.css */
 
 .navbar {
+  /* width: 100vw; */
   position: fixed !important;
   top: 0;
   left: 0;
@@ -21,7 +22,7 @@
 }
 
 .navbar-container {
-  max-width: 1400px;
+  width: 100vw;
   margin: 0 auto;
   padding: 0 50px;
   display: flex;
