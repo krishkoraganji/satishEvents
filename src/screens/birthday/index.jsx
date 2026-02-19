@@ -10,19 +10,28 @@ import {
   UserOutlined,
   CalendarOutlined,
   GiftOutlined,
-  StarOutlined
+  StarOutlined,
+  // BalloonOutlined,
+  // CakeOutlined
 } from '@ant-design/icons';
 import { motion } from 'framer-motion';
-// Import images from your wedding folder
+
+// Birthday Images
+import bd1 from "../../assests/birthday/bd1.jpeg";
+
+// Wedding Images (for additional variety if needed)
 import w1 from "../../assests/wedding/w1.jpeg";
 import w2 from "../../assests/wedding/w2.jpeg";
 import w3 from "../../assests/wedding/w3.jpeg";
-import w4 from "../../assests/wedding/w1.jpeg";
-import w5 from "../../assests/wedding/w2.jpeg";
-import w6 from "../../assests/wedding/w3.jpeg";
-import w7 from "../../assests/wedding/w1.jpeg";
-import w8 from "../../assests/wedding/w2.jpeg";
-import w9 from "../../assests/wedding/w3.jpeg";
+
+// Reception Images (for additional variety)
+import r1 from "../../assests/reception/r1.jpeg";
+import r2 from "../../assests/reception/r2.jpeg";
+import r3 from "../../assests/reception/r3.jpeg";
+
+// Baby Shower Images (for kids themes)
+import b1 from "../../assests/baby/b1.jpeg";
+
 import './index.css';
 
 const { Title, Paragraph, Text } = Typography;
@@ -46,7 +55,7 @@ const BirthdayDecor = () => {
         'Goodie Bag Table'
       ],
       recommended: true,
-      image: w1,
+      image: bd1,
       ageGroup: '1-10 years'
     },
     {
@@ -62,7 +71,7 @@ const BirthdayDecor = () => {
         'Custom Signage'
       ],
       recommended: false,
-      image: w2,
+      image: r1,
       ageGroup: '11-19 years'
     },
     {
@@ -78,7 +87,7 @@ const BirthdayDecor = () => {
         'Memorable Moments Setup'
       ],
       recommended: false,
-      image: w3,
+      image: w1,
       ageGroup: '20+ years'
     },
     {
@@ -94,47 +103,58 @@ const BirthdayDecor = () => {
         'Anniversary Style Setup'
       ],
       recommended: false,
-      image: w4,
+      image: w2,
       ageGroup: '18th, 21st, 50th, etc.'
     }
   ];
 
   const galleryImages = [
-    { id: 1, category: 'Kids Theme', image: w1, title: 'Mickey Mouse Theme Party', location: 'Vijayawada', year: '2024', age: '5 years' },
-    { id: 2, category: 'Kids Theme', image: w2, title: 'Princess Theme Birthday', location: 'Guntur', year: '2024', age: '7 years' },
-    { id: 3, category: 'Balloon Decor', image: w3, title: 'Giant Balloon Arch', location: 'Tenali', year: '2023', age: 'All Ages' },
-    { id: 4, category: 'Teen Theme', image: w4, title: 'Neon Glow Party', location: 'Vijayawada', year: '2024', age: '16 years' },
-    { id: 5, category: 'Adult Theme', image: w5, title: 'Black & Gold Birthday', location: 'Mangalagiri', year: '2024', age: '30 years' },
-    { id: 6, category: 'Balloon Decor', image: w6, title: 'Balloon Garland with Flowers', location: 'Guntur', year: '2023', age: 'All Ages' },
-    { id: 7, category: 'Kids Theme', image: w7, title: 'Superhero Birthday', location: 'Vijayawada', year: '2024', age: '8 years' },
-    { id: 8, category: 'Adult Theme', image: w8, title: 'Rustic Birthday Setup', location: 'Tenali', year: '2023', age: '35 years' },
-    { id: 9, category: 'Milestone', image: w9, title: '18th Birthday Celebration', location: 'Vijayawada', year: '2024', age: '18 years' },
-    { id: 10, category: 'Teen Theme', image: w1, title: 'Hollywood Theme Party', location: 'Guntur', year: '2024', age: '15 years' },
-    { id: 11, category: 'Kids Theme', image: w2, title: 'Unicorn Theme Birthday', location: 'Tenali', year: '2023', age: '4 years' },
-    { id: 12, category: 'Milestone', image: w3, title: '50th Birthday Celebration', location: 'Vijayawada', year: '2024', age: '50 years' }
+    // Kids Themes (using birthday and baby images)
+    { id: 1, category: 'Kids Theme', image: bd1, title: 'Mickey Mouse Theme Party', location: 'Vijayawada', year: '2024', age: '5 years' },
+    { id: 2, category: 'Kids Theme', image: b1, title: 'Princess Theme Birthday', location: 'Guntur', year: '2024', age: '7 years' },
+    
+    // Balloon Decor (using wedding/reception images with balloons)
+    { id: 3, category: 'Balloon Decor', image: w1, title: 'Giant Balloon Arch', location: 'Tenali', year: '2023', age: 'All Ages' },
+    { id: 4, category: 'Balloon Decor', image: w2, title: 'Balloon Garland with Flowers', location: 'Guntur', year: '2023', age: 'All Ages' },
+    
+    // Teen Themes
+    { id: 5, category: 'Teen Theme', image: r1, title: 'Neon Glow Party', location: 'Vijayawada', year: '2024', age: '16 years' },
+    { id: 6, category: 'Teen Theme', image: r2, title: 'Hollywood Theme Party', location: 'Guntur', year: '2024', age: '15 years' },
+    
+    // Adult Themes
+    { id: 7, category: 'Adult Theme', image: w3, title: 'Black & Gold Birthday', location: 'Mangalagiri', year: '2024', age: '30 years' },
+    { id: 8, category: 'Adult Theme', image: r3, title: 'Rustic Birthday Setup', location: 'Tenali', year: '2023', age: '35 years' },
+    
+    // Milestone Birthdays
+    { id: 9, category: 'Milestone', image: w1, title: '18th Birthday Celebration', location: 'Vijayawada', year: '2024', age: '18 years' },
+    { id: 10, category: 'Milestone', image: w2, title: '50th Birthday Celebration', location: 'Vijayawada', year: '2024', age: '50 years' },
+    
+    // More Kids Themes
+    { id: 11, category: 'Kids Theme', image: bd1, title: 'Superhero Birthday', location: 'Vijayawada', year: '2024', age: '8 years' },
+    { id: 12, category: 'Kids Theme', image: b1, title: 'Unicorn Theme Birthday', location: 'Tenali', year: '2023', age: '4 years' }
   ];
 
   const categories = [
-    { title: 'Kids Themes', icon: '🧸', count: 45, image: w1 },
-    { title: 'Teen Parties', icon: '🎵', count: 38, image: w2 },
-    { title: 'Adult Celebrations', icon: '🥂', count: 52, image: w3 },
-    { title: 'Balloon Decor', icon: '🎈', count: 67, image: w4 },
-    { title: 'Cake Tables', icon: '🎂', count: 42, image: w5 },
-    { title: 'Photo Booths', icon: '📸', count: 56, image: w6 },
-    { title: 'Themed Parties', icon: '🎭', count: 34, image: w7 },
-    { title: 'Milestone Birthdays', icon: '⭐', count: 28, image: w8 }
+    { title: 'Kids Themes', icon: '🧸', count: 45, image: bd1 },
+    { title: 'Teen Parties', icon: '🎵', count: 38, image: r1 },
+    { title: 'Adult Celebrations', icon: '🥂', count: 52, image: w1 },
+    { title: 'Balloon Decor', icon: '🎈', count: 67, image: w2 },
+    { title: 'Cake Tables', icon: '🎂', count: 42, image: w3 },
+    { title: 'Photo Booths', icon: '📸', count: 56, image: r2 },
+    { title: 'Themed Parties', icon: '🎭', count: 34, image: r3 },
+    { title: 'Milestone Birthdays', icon: '⭐', count: 28, image: w1 }
   ];
 
   const popularThemes = [
-    { name: 'Mickey Mouse', icon: '🐭', image: w1 },
-    { name: 'Princess', icon: '👸', image: w2 },
-    { name: 'Superhero', icon: '🦸', image: w3 },
-    { name: 'Unicorn', icon: '🦄', image: w4 },
-    { name: 'Jungle Safari', icon: '🦁', image: w5 },
-    { name: 'Underwater', icon: '🐠', image: w6 },
-    { name: 'Space', icon: '🚀', image: w7 },
-    { name: 'Hollywood', icon: '🎬', image: w8 },
-    { name: 'Neon Glow', icon: '✨', image: w9 },
+    { name: 'Mickey Mouse', icon: '🐭', image: bd1 },
+    { name: 'Princess', icon: '👸', image: b1 },
+    { name: 'Superhero', icon: '🦸', image: w1 },
+    { name: 'Unicorn', icon: '🦄', image: bd1 },
+    { name: 'Jungle Safari', icon: '🦁', image: w2 },
+    { name: 'Underwater', icon: '🐠', image: w3 },
+    { name: 'Space', icon: '🚀', image: r1 },
+    { name: 'Hollywood', icon: '🎬', image: r2 },
+    { name: 'Neon Glow', icon: '✨', image: r3 },
     { name: 'Rustic', icon: '🌾', image: w1 },
     { name: 'Black & Gold', icon: '🌟', image: w2 },
     { name: 'Floral', icon: '🌸', image: w3 }
@@ -145,7 +165,7 @@ const BirthdayDecor = () => {
       name: 'Priya Sharma',
       event: 'Daughter\'s 5th Birthday - Vijayawada',
       text: 'The unicorn theme decoration was absolutely magical! My daughter and all her friends were thrilled. The balloon arch and cake table were stunning.',
-      image: w1,
+      image: bd1,
       date: 'March 2024',
       location: 'Vijayawada'
     },
@@ -153,7 +173,7 @@ const BirthdayDecor = () => {
       name: 'Rahul Reddy',
       event: 'Son\'s 10th Birthday - Guntur',
       text: 'Superhero theme done perfectly! The kids loved the photo booth with character cutouts. Great attention to detail and very professional team.',
-      image: w2,
+      image: w1,
       date: 'February 2024',
       location: 'Guntur'
     },
@@ -161,7 +181,7 @@ const BirthdayDecor = () => {
       name: 'Anjali Krishna',
       event: '18th Birthday - Tenali',
       text: 'The neon glow party setup was a hit with all the teens! The LED decorations created an amazing atmosphere. Thank you for making it memorable.',
-      image: w3,
+      image: r1,
       date: 'January 2024',
       location: 'Tenali'
     },
@@ -169,7 +189,7 @@ const BirthdayDecor = () => {
       name: 'Venkateswara Rao',
       event: '50th Birthday - Vijayawada',
       text: 'Elegant black and gold theme for my 50th. The number displays and memory wall touched everyone\'s hearts. Perfect celebration!',
-      image: w4,
+      image: w2,
       date: 'December 2023',
       location: 'Vijayawada'
     }
@@ -177,13 +197,20 @@ const BirthdayDecor = () => {
 
   const getFilteredImages = () => {
     if (activeTab === 'all') return galleryImages;
-    return galleryImages.filter(img => img.category.toLowerCase().includes(activeTab.toLowerCase()));
+    return galleryImages.filter(img => 
+      img.category.toLowerCase().includes(activeTab.toLowerCase()) ||
+      (activeTab === 'kids theme' && img.category === 'Kids Theme') ||
+      (activeTab === 'teen theme' && img.category === 'Teen Theme') ||
+      (activeTab === 'adult theme' && img.category === 'Adult Theme') ||
+      (activeTab === 'balloon decor' && img.category === 'Balloon Decor') ||
+      (activeTab === 'milestone' && img.category === 'Milestone')
+    );
   };
 
   return (
     <div className="birthday-decor-page">
       {/* Hero Section */}
-      <div className="birthday-hero" style={{ backgroundImage: `url(${w9})` }}>
+      <div className="birthday-hero" style={{ backgroundImage: `url(${bd1})` }}>
         <div className="hero-overlay">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -220,7 +247,20 @@ const BirthdayDecor = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card hoverable className="category-card">
+                <Card 
+                  hoverable 
+                  className="category-card"
+                  onClick={() => {
+                    setSelectedImage({
+                      image: item.image,
+                      title: item.title,
+                      category: item.title,
+                      location: 'Various Locations',
+                      year: '2024'
+                    });
+                    setModalVisible(true);
+                  }}
+                >
                   <div className="category-icon">{item.icon}</div>
                   <Title level={5}>{item.title}</Title>
                   <Tag color="gold">{item.count} Designs</Tag>
@@ -479,7 +519,7 @@ const BirthdayDecor = () => {
                 <Tag color="gold">{selectedImage.category}</Tag>
                 <div className="modal-meta">
                   {selectedImage.age && (
-                    <span>Age: {selectedImage.age}</span>
+                    <span> Age: {selectedImage.age}</span>
                   )}
                   <span><EnvironmentOutlined /> {selectedImage.location}</span>
                   <span><CalendarOutlined /> {selectedImage.year}</span>

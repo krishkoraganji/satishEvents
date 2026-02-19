@@ -13,19 +13,30 @@ import {
   SmileOutlined,
   TeamOutlined,
   SkinOutlined,
-  CloudOutlined
+  CloudOutlined,
+  // BabyOutlined
 } from '@ant-design/icons';
 import { motion } from 'framer-motion';
-// Import images from your wedding folder
+
+// Baby Shower Images
+import b1 from "../../assests/baby/b1.jpeg";
+
+// Wedding Images (for additional variety)
 import w1 from "../../assests/wedding/w1.jpeg";
 import w2 from "../../assests/wedding/w2.jpeg";
 import w3 from "../../assests/wedding/w3.jpeg";
-import w4 from "../../assests/wedding/w1.jpeg";
-import w5 from "../../assests/wedding/w2.jpeg";
-import w6 from "../../assests/wedding/w3.jpeg";
-import w7 from "../../assests/wedding/w1.jpeg";
-import w8 from "../../assests/wedding/w2.jpeg";
-import w9 from "../../assests/wedding/w3.jpeg";
+import w4 from "../../assests/wedding/w4.jpeg";
+import w5 from "../../assests/wedding/w5.jpeg";
+import w6 from "../../assests/wedding/w6.jpeg";
+
+// Birthday Images (for kids themes)
+import bd1 from "../../assests/birthday/bd1.jpeg";
+
+// House Ceremony Images (for traditional elements)
+import hc1 from "../../assests/house/hc1.jpeg";
+import hc2 from "../../assests/house/hc2.jpeg";
+import hc3 from "../../assests/house/hc3.jpeg";
+
 import './index.css';
 
 const { Title, Paragraph, Text } = Typography;
@@ -50,7 +61,7 @@ const BabyShowerDecor = () => {
         'Party Favors Table'
       ],
       recommended: true,
-      image: w1,
+      image: b1,
       gender: 'Any'
     },
     {
@@ -67,7 +78,7 @@ const BabyShowerDecor = () => {
         'Smoke/Fireworks Option'
       ],
       recommended: false,
-      image: w2,
+      image: w1,
       gender: 'Reveal'
     },
     {
@@ -84,7 +95,7 @@ const BabyShowerDecor = () => {
         'Sweet Treats Table'
       ],
       recommended: false,
-      image: w3,
+      image: w2,
       gender: 'Girl'
     },
     {
@@ -101,7 +112,7 @@ const BabyShowerDecor = () => {
         'Cookie Table Setup'
       ],
       recommended: false,
-      image: w4,
+      image: w3,
       gender: 'Boy'
     },
     {
@@ -118,11 +129,11 @@ const BabyShowerDecor = () => {
         'Special Twin Banner'
       ],
       recommended: false,
-      image: w5,
+      image: w4,
       gender: 'Twins'
     },
     {
-      name: 'Sreemantham Traditional',
+      name: 'Seemantham Traditional',
       features: [
         'Traditional South Indian Setup',
         'Mango Leaf Torans',
@@ -135,38 +146,50 @@ const BabyShowerDecor = () => {
         'Sacred Elements'
       ],
       recommended: false,
-      image: w6,
+      image: hc1,
       gender: 'Traditional'
     }
   ];
 
   const galleryImages = [
-    { id: 1, category: 'Baby Girl', image: w1, title: 'Pink Princess Baby Shower', location: 'Vijayawada', year: '2024', gender: 'Girl' },
-    { id: 2, category: 'Baby Boy', image: w2, title: 'Blue Wonderland Celebration', location: 'Guntur', year: '2024', gender: 'Boy' },
-    { id: 3, category: 'Gender Reveal', image: w3, title: 'Surprise Gender Reveal Party', location: 'Tenali', year: '2023', gender: 'Reveal' },
-    { id: 4, category: 'Twins', image: w4, title: 'Double Joy Twins Shower', location: 'Vijayawada', year: '2024', gender: 'Twins' },
-    { id: 5, category: 'Neutral', image: w5, title: 'Yellow & Grey Neutral Theme', location: 'Mangalagiri', year: '2024', gender: 'Neutral' },
-    { id: 6, category: 'Traditional', image: w6, title: 'Sreemantham Traditional Setup', location: 'Guntur', year: '2023', gender: 'Traditional' },
-    { id: 7, category: 'Baby Girl', image: w7, title: 'Floral Pink Baby Shower', location: 'Vijayawada', year: '2024', gender: 'Girl' },
-    { id: 8, category: 'Baby Boy', image: w8, title: 'Nautical Baby Boy Theme', location: 'Tenali', year: '2023', gender: 'Boy' },
-    { id: 9, category: 'Gender Reveal', image: w9, title: 'Twinkle Twinkle Reveal', location: 'Vijayawada', year: '2024', gender: 'Reveal' },
-    { id: 10, category: 'Neutral', image: w1, title: 'Pastel Rainbow Theme', location: 'Guntur', year: '2024', gender: 'Neutral' },
-    { id: 11, category: 'Traditional', image: w2, title: 'Godh Bharai Ceremony', location: 'Tenali', year: '2023', gender: 'Traditional' },
-    { id: 12, category: 'Twins', image: w3, title: 'Two Little Miracles', location: 'Vijayawada', year: '2024', gender: 'Twins' },
-    { id: 13, category: 'Baby Girl', image: w4, title: 'Butterfly Theme Baby Shower', location: 'Guntur', year: '2024', gender: 'Girl' },
-    { id: 14, category: 'Baby Boy', image: w5, title: 'Elephant Baby Boy Theme', location: 'Mangalagiri', year: '2023', gender: 'Boy' },
-    { id: 15, category: 'Neutral', image: w6, title: 'Clouds & Stars Neutral', location: 'Vijayawada', year: '2024', gender: 'Neutral' }
+    // Baby Girl Themes (using baby and wedding images with pink themes)
+    { id: 1, category: 'Baby Girl', image: b1, title: 'Pink Princess Baby Shower', location: 'Vijayawada', year: '2024', gender: 'Girl' },
+    { id: 2, category: 'Baby Girl', image: w1, title: 'Floral Pink Baby Shower', location: 'Vijayawada', year: '2024', gender: 'Girl' },
+    { id: 3, category: 'Baby Girl', image: w2, title: 'Butterfly Theme Baby Shower', location: 'Guntur', year: '2024', gender: 'Girl' },
+    
+    // Baby Boy Themes
+    { id: 4, category: 'Baby Boy', image: w3, title: 'Blue Wonderland Celebration', location: 'Guntur', year: '2024', gender: 'Boy' },
+    { id: 5, category: 'Baby Boy', image: w4, title: 'Nautical Baby Boy Theme', location: 'Tenali', year: '2023', gender: 'Boy' },
+    { id: 6, category: 'Baby Boy', image: w5, title: 'Elephant Baby Boy Theme', location: 'Mangalagiri', year: '2023', gender: 'Boy' },
+    
+    // Gender Reveal
+    { id: 7, category: 'Gender Reveal', image: w6, title: 'Surprise Gender Reveal Party', location: 'Tenali', year: '2023', gender: 'Reveal' },
+    { id: 8, category: 'Gender Reveal', image: w1, title: 'Twinkle Twinkle Reveal', location: 'Vijayawada', year: '2024', gender: 'Reveal' },
+    
+    // Twins
+    { id: 9, category: 'Twins', image: w2, title: 'Double Joy Twins Shower', location: 'Vijayawada', year: '2024', gender: 'Twins' },
+    { id: 10, category: 'Twins', image: w3, title: 'Two Little Miracles', location: 'Vijayawada', year: '2024', gender: 'Twins' },
+    
+    // Neutral Themes
+    { id: 11, category: 'Neutral', image: bd1, title: 'Yellow & Grey Neutral Theme', location: 'Mangalagiri', year: '2024', gender: 'Neutral' },
+    { id: 12, category: 'Neutral', image: w4, title: 'Pastel Rainbow Theme', location: 'Guntur', year: '2024', gender: 'Neutral' },
+    { id: 13, category: 'Neutral', image: w5, title: 'Clouds & Stars Neutral', location: 'Vijayawada', year: '2024', gender: 'Neutral' },
+    
+    // Traditional Seemantham
+    { id: 14, category: 'Traditional', image: hc1, title: 'Seemantham Traditional Setup', location: 'Guntur', year: '2023', gender: 'Traditional' },
+    { id: 15, category: 'Traditional', image: hc2, title: 'Godh Bharai Ceremony', location: 'Tenali', year: '2023', gender: 'Traditional' },
+    { id: 16, category: 'Traditional', image: hc3, title: 'Traditional Baby Shower', location: 'Vijayawada', year: '2024', gender: 'Traditional' }
   ];
 
   const categories = [
-    { title: 'Baby Girl', icon: '👧', count: 45, image: w1 },
-    { title: 'Baby Boy', icon: '👦', count: 42, image: w2 },
-    { title: 'Gender Reveal', icon: '❓', count: 28, image: w3 },
-    { title: 'Twins', icon: '👯', count: 18, image: w4 },
-    { title: 'Neutral Themes', icon: '🌈', count: 35, image: w5 },
-    { title: 'Traditional Sreemantham', icon: '🪔', count: 32, image: w6 },
-    { title: 'Diaper Cakes', icon: '🎂', count: 56, image: w7 },
-    { title: 'Onesie Decor', icon: '👕', count: 48, image: w8 }
+    { title: 'Baby Girl', icon: '👧', count: 45, image: b1 },
+    { title: 'Baby Boy', icon: '👦', count: 42, image: w3 },
+    { title: 'Gender Reveal', icon: '❓', count: 28, image: w6 },
+    { title: 'Twins', icon: '👯', count: 18, image: w2 },
+    { title: 'Neutral Themes', icon: '🌈', count: 35, image: bd1 },
+    { title: 'Traditional Seemantham', icon: '🪔', count: 32, image: hc1 },
+    { title: 'Diaper Cakes', icon: '🎂', count: 56, image: w1 },
+    { title: 'Onesie Decor', icon: '👕', count: 48, image: w4 }
   ];
 
   const popularThemes = [
@@ -176,12 +199,12 @@ const BabyShowerDecor = () => {
     { name: 'Butterfly Garden', icon: '🦋', image: w4 },
     { name: 'Nautical', icon: '⚓', image: w5 },
     { name: 'Floral Garden', icon: '🌸', image: w6 },
-    { name: 'Clouds & Rainbows', icon: '☁️', image: w7 },
-    { name: 'Teddy Bear', icon: '🧸', image: w8 },
-    { name: 'Princess', icon: '👸', image: w9 },
-    { name: 'Little Prince', icon: '🤴', image: w1 },
-    { name: 'Circus Theme', icon: '🎪', image: w2 },
-    { name: 'Woodland', icon: '🦊', image: w3 }
+    { name: 'Clouds & Rainbows', icon: '☁️', image: b1 },
+    { name: 'Teddy Bear', icon: '🧸', image: bd1 },
+    { name: 'Princess', icon: '👸', image: w1 },
+    { name: 'Little Prince', icon: '🤴', image: w2 },
+    { name: 'Circus Theme', icon: '🎪', image: w3 },
+    { name: 'Woodland', icon: '🦊', image: w4 }
   ];
 
   const traditionalElements = [
@@ -198,7 +221,7 @@ const BabyShowerDecor = () => {
       name: 'Priyanka Reddy',
       event: 'Baby Girl Shower - Vijayawada',
       text: 'The pink princess theme was absolutely beautiful! Every detail from the balloon arch to the onesie display was perfect. Thank you for making this celebration so special.',
-      image: w1,
+      image: b1,
       date: 'March 2024',
       location: 'Vijayawada'
     },
@@ -206,15 +229,15 @@ const BabyShowerDecor = () => {
       name: 'Srinivas & Lakshmi',
       event: 'Gender Reveal - Guntur',
       text: 'The suspense and reveal moment was perfectly executed! The blue confetti cannons and the photo booth captured the best moments. Our families loved it!',
-      image: w2,
+      image: w1,
       date: 'February 2024',
       location: 'Guntur'
     },
     {
       name: 'Anjali Devi',
-      event: 'Sreemantham - Tenali',
+      event: 'Seemantham - Tenali',
       text: 'Beautiful traditional setup with mango leaves, kolams, and lamps. It felt so authentic and sacred. Perfect for our family ceremony.',
-      image: w3,
+      image: hc1,
       date: 'January 2024',
       location: 'Tenali'
     },
@@ -222,7 +245,7 @@ const BabyShowerDecor = () => {
       name: 'Kavita & Rajesh',
       event: 'Twins Baby Shower - Vijayawada',
       text: 'Double the joy, double the decorations! They created the most amazing pink & blue combo theme. Everyone complimented the twin diaper cakes!',
-      image: w4,
+      image: w2,
       date: 'December 2023',
       location: 'Vijayawada'
     },
@@ -230,7 +253,7 @@ const BabyShowerDecor = () => {
       name: 'Venkata Lakshmi',
       event: 'Godh Bharai - Guntur',
       text: 'The traditional Godh Bharai ceremony decorations were exactly what we wanted. The fruit displays and flower arrangements were stunning.',
-      image: w5,
+      image: hc2,
       date: 'November 2023',
       location: 'Guntur'
     }
@@ -247,7 +270,7 @@ const BabyShowerDecor = () => {
   return (
     <div className="baby-shower-decor-page">
       {/* Hero Section */}
-      <div className="baby-shower-hero" style={{ backgroundImage: `url(${w9})` }}>
+      <div className="baby-shower-hero" style={{ backgroundImage: `url(${b1})` }}>
         <div className="hero-overlay">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -284,7 +307,20 @@ const BabyShowerDecor = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card hoverable className="category-card">
+                <Card 
+                  hoverable 
+                  className="category-card"
+                  onClick={() => {
+                    setSelectedImage({
+                      image: item.image,
+                      title: item.title,
+                      category: item.title,
+                      location: 'Various Locations',
+                      year: '2024'
+                    });
+                    setModalVisible(true);
+                  }}
+                >
                   <div className="category-icon">{item.icon}</div>
                   <Title level={5}>{item.title}</Title>
                   <Tag color="gold">{item.count} Designs</Tag>
@@ -341,7 +377,7 @@ const BabyShowerDecor = () => {
       <section className="traditional-section">
         <div className="section-header">
           <Tag color="gold" className="section-tag">Traditional</Tag>
-          <Title level={2} className="section-title">Sreemantham & Traditional Elements</Title>
+          <Title level={2} className="section-title">Seemantham & Traditional Elements</Title>
           <Paragraph className="section-subtitle">
             Authentic traditional decorations for sacred ceremonies
           </Paragraph>
@@ -510,7 +546,7 @@ const BabyShowerDecor = () => {
             <Card className="feature-card">
               <SmileOutlined className="feature-icon" />
               <Title level={4}>Traditional Touch</Title>
-              <Text>Authentic Sreemantham and traditional elements</Text>
+              <Text>Authentic Seemantham and traditional elements</Text>
             </Card>
           </Col>
         </Row>
