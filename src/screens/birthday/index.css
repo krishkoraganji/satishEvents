@@ -1,0 +1,322 @@
+/* Add these styles to your existing pages/index.css */
+
+/* ===== Birthday Decor Page Specific Styles ===== */
+.birthday-decor-page {
+  padding-top: 80px;
+  overflow-x: hidden;
+  background: var(--bg-primary);
+}
+
+/* ===== Birthday Hero Section ===== */
+.birthday-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  max-height: 700px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.birthday-hero .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.birthday-hero .hero-title {
+  color: var(--white) !important;
+  font-size: var(--text-6xl) !important;
+  font-weight: var(--font-bold) !important;
+  margin-bottom: var(--spacing-4) !important;
+  font-family: var(--font-primary) !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.birthday-hero .hero-description {
+  color: rgba(255,255,255,0.9) !important;
+  font-size: var(--text-xl) !important;
+  margin-bottom: var(--spacing-8) !important;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.birthday-hero .hero-btn {
+  background: var(--accent-gold) !important;
+  border-color: var(--accent-gold) !important;
+  color: var(--black) !important;
+  font-weight: var(--font-semibold);
+  height: 48px !important;
+  padding: 0 32px !important;
+  font-size: var(--text-base) !important;
+  border-radius: var(--radius-lg) !important;
+  transition: all 0.3s ease;
+}
+
+.birthday-hero .hero-btn:hover {
+  background: var(--accent-gold-light) !important;
+  border-color: var(--accent-gold-light) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(198, 161, 91, 0.3);
+}
+
+/* ===== Themes Section ===== */
+.themes-section {
+  background: var(--white);
+}
+
+.theme-card {
+  text-align: center;
+  border-radius: var(--radius-lg) !important;
+  transition: all 0.3s;
+  cursor: pointer;
+  height: 100%;
+}
+
+.theme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.theme-card .ant-card-body {
+  padding: var(--spacing-4) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-icon {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.theme-name {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+  text-align: center;
+}
+
+/* ===== Package Cards Update ===== */
+.age-tag {
+  display: inline-block;
+  margin: 0 auto var(--spacing-3);
+  background: var(--accent-gold-light) !important;
+  color: var(--black) !important;
+  border: none !important;
+  font-weight: var(--font-semibold);
+  padding: 4px 12px;
+}
+
+.package-features {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.package-features::-webkit-scrollbar {
+  width: 4px;
+}
+
+.package-features::-webkit-scrollbar-track {
+  background: var(--gray-2);
+  border-radius: 10px;
+}
+
+.package-features::-webkit-scrollbar-thumb {
+  background: var(--accent-gold);
+  border-radius: 10px;
+}
+
+/* ===== Feature Cards ===== */
+.why-choose-section {
+  background: linear-gradient(135deg, var(--gray-1) 0%, var(--gray-3) 100%);
+}
+
+.feature-card {
+  text-align: center;
+  border-radius: var(--radius-lg) !important;
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.feature-card .ant-card-body {
+  padding: var(--spacing-6) !important;
+}
+
+.feature-icon {
+  font-size: 48px;
+  color: var(--accent-gold);
+  margin-bottom: var(--spacing-4);
+}
+
+.feature-card h4 {
+  margin-bottom: var(--spacing-2) !important;
+  font-family: var(--font-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.feature-card .ant-typography {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  display: block;
+  line-height: 1.6;
+}
+
+/* ===== Gallery Item Meta Update ===== */
+.gallery-item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.7);
+}
+
+.gallery-item-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.gallery-item-meta .anticon {
+  color: var(--accent-gold);
+  font-size: 12px;
+}
+
+/* ===== Responsive Updates ===== */
+@media (max-width: 1200px) {
+  .birthday-hero .hero-title {
+    font-size: var(--text-5xl) !important;
+  }
+  
+  .theme-icon {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 992px) {
+  .birthday-hero {
+    height: 60vh;
+  }
+  
+  .birthday-hero .hero-title {
+    font-size: var(--text-4xl) !important;
+  }
+  
+  .birthday-hero .hero-description {
+    font-size: var(--text-lg) !important;
+  }
+  
+  .feature-icon {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .birthday-decor-page {
+    padding-top: 70px;
+  }
+  
+  .birthday-hero {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .birthday-hero .hero-title {
+    font-size: var(--text-3xl) !important;
+  }
+  
+  .birthday-hero .hero-description {
+    font-size: var(--text-base) !important;
+    padding: 0 20px;
+  }
+  
+  .theme-icon {
+    font-size: 36px;
+  }
+  
+  .feature-icon {
+    font-size: 36px;
+  }
+  
+  .feature-card .ant-card-body {
+    padding: var(--spacing-4) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .birthday-decor-page {
+    padding-top: 60px;
+  }
+  
+  .birthday-hero {
+    height: 40vh;
+    min-height: 350px;
+  }
+  
+  .birthday-hero .hero-title {
+    font-size: var(--text-2xl) !important;
+  }
+  
+  .birthday-hero .hero-description {
+    font-size: var(--text-sm) !important;
+  }
+  
+  .birthday-hero .hero-btn {
+    height: 40px !important;
+    padding: 0 24px !important;
+    font-size: var(--text-sm) !important;
+  }
+  
+  .theme-card .ant-card-body {
+    padding: var(--spacing-3) !important;
+  }
+  
+  .theme-icon {
+    font-size: 32px;
+  }
+  
+  .theme-name {
+    font-size: var(--text-xs);
+  }
+  
+  .feature-card .ant-card-body {
+    padding: var(--spacing-3) !important;
+  }
+  
+  .feature-icon {
+    font-size: 32px;
+    margin-bottom: var(--spacing-2);
+  }
+  
+  .feature-card h4 {
+    font-size: var(--text-base) !important;
+  }
+  
+  .feature-card .ant-typography {
+    font-size: var(--text-xs);
+  }
+  
+  .package-features {
+    max-height: 150px;
+  }
+}

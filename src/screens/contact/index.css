@@ -1,0 +1,638 @@
+/* Add these styles to your existing pages/index.css */
+
+/* ===== Contact Page Specific Styles ===== */
+.contact-page {
+  padding-top: 80px;
+  overflow-x: hidden;
+  background: var(--bg-primary);
+}
+
+/* ===== Contact Hero Section ===== */
+.contact-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 400px;
+  max-height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.contact-hero .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.contact-hero .hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.contact-hero .hero-tag {
+  margin-bottom: var(--spacing-4);
+  font-size: var(--text-sm);
+  padding: 8px 20px;
+  background: var(--accent-gold) !important;
+  color: var(--black) !important;
+  border: none;
+}
+
+.contact-hero .hero-title {
+  color: var(--white) !important;
+  font-size: var(--text-5xl) !important;
+  font-weight: var(--font-bold) !important;
+  margin-bottom: var(--spacing-4) !important;
+  font-family: var(--font-primary) !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.contact-hero .hero-description {
+  color: rgba(255,255,255,0.9) !important;
+  font-size: var(--text-xl) !important;
+  margin-bottom: var(--spacing-8) !important;
+}
+
+.contact-hero .hero-stats {
+  color: var(--white);
+  font-size: var(--text-base);
+}
+
+.contact-hero .hero-stats .anticon {
+  color: var(--accent-gold);
+  margin-right: 8px;
+}
+
+/* ===== Contact Section ===== */
+.contact-section {
+  padding: 80px 50px;
+}
+
+/* Form Styles */
+.form-container {
+  background: var(--white);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.form-tag {
+  margin-bottom: var(--spacing-4);
+  font-size: var(--text-sm);
+  padding: 6px 16px;
+}
+
+.form-title {
+  font-size: var(--text-3xl) !important;
+  margin-bottom: var(--spacing-4) !important;
+  font-family: var(--font-primary) !important;
+}
+
+.form-subtitle {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form .ant-form-item-label label {
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+}
+
+.contact-form .ant-input,
+.contact-form .ant-select-selector,
+.contact-form .ant-input-textarea {
+  border-radius: var(--radius-lg) !important;
+  border-color: var(--border-medium);
+  padding: 10px 12px !important;
+  height: auto;
+}
+
+.contact-form .ant-input:hover,
+.contact-form .ant-select-selector:hover {
+  border-color: var(--accent-gold) !important;
+}
+
+.contact-form .ant-input:focus,
+.contact-form .ant-select-selector:focus,
+.contact-form .ant-input-focused {
+  border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 0 2px rgba(198, 161, 91, 0.1) !important;
+}
+
+.quick-responses {
+  margin-bottom: var(--spacing-4);
+  padding: var(--spacing-4);
+  background: var(--gray-2);
+  border-radius: var(--radius-lg);
+}
+
+.quick-tag {
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 6px 12px;
+  font-size: var(--text-sm);
+}
+
+.quick-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.submit-btn {
+  background: var(--accent-gold) !important;
+  border-color: var(--accent-gold) !important;
+  color: var(--black) !important;
+  font-weight: var(--font-semibold);
+  height: 48px !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+.submit-btn:hover {
+  background: var(--accent-gold-light) !important;
+  border-color: var(--accent-gold-light) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(198, 161, 91, 0.3);
+}
+
+.form-footer {
+  text-align: center;
+}
+
+.form-footer .anticon {
+  color: var(--accent-gold);
+  margin-right: 4px;
+}
+
+/* Info Section */
+.info-header {
+  margin-bottom: var(--spacing-8);
+}
+
+.info-tag {
+  margin-bottom: var(--spacing-4);
+  font-size: var(--text-sm);
+  padding: 6px 16px;
+}
+
+.info-title {
+  font-size: var(--text-3xl) !important;
+  margin-bottom: var(--spacing-4) !important;
+  font-family: var(--font-primary) !important;
+}
+
+.info-subtitle {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+}
+
+.info-card {
+  height: 100%;
+  border-radius: var(--radius-lg) !important;
+  transition: all 0.3s;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: var(--spacing-4) !important;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.info-card-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-gold-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.info-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-card-content h5 {
+  margin-bottom: 0 !important;
+  font-size: var(--text-base) !important;
+  font-family: var(--font-primary) !important;
+}
+
+.info-subtitle {
+  font-size: var(--text-sm);
+  color: var(--accent-gold);
+}
+
+.info-detail {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+}
+
+.contact-divider {
+  margin: var(--spacing-8) 0;
+  border-color: var(--border-light);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+}
+
+/* Social Section */
+.social-section {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+  padding: var(--spacing-6);
+  background: var(--gray-2);
+  border-radius: var(--radius-xl);
+}
+
+.social-section h4 {
+  margin-bottom: var(--spacing-4) !important;
+  font-family: var(--font-primary) !important;
+}
+
+.social-links {
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px !important;
+}
+
+.social-btn {
+  width: 48px;
+  height: 48px;
+  transition: all 0.3s;
+}
+
+.social-btn:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: var(--shadow-xl);
+}
+
+.social-handles {
+  color: var(--text-tertiary);
+}
+
+/* Map Card */
+.map-card {
+  border-radius: var(--radius-lg) !important;
+  margin-bottom: var(--spacing-6);
+  overflow: hidden;
+}
+
+.map-card .ant-card-head {
+  border-bottom: 1px solid var(--border-light);
+  padding: var(--spacing-4) var(--spacing-6);
+}
+
+.map-card .ant-card-head-title {
+  font-size: var(--text-lg);
+  font-family: var(--font-primary);
+}
+
+.map-container {
+  height: 250px;
+  background: var(--gray-2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.map-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-gold-bg) 0%, var(--gray-2) 100%);
+}
+
+.map-icon {
+  font-size: 48px;
+  color: var(--accent-gold);
+  margin-bottom: var(--spacing-4);
+}
+
+.map-placeholder h4 {
+  margin-bottom: var(--spacing-2) !important;
+  font-family: var(--font-primary);
+}
+
+.map-btn {
+  margin-top: var(--spacing-4);
+  background: var(--accent-gold) !important;
+  border-color: var(--accent-gold) !important;
+  color: var(--black) !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+.map-btn:hover {
+  background: var(--accent-gold-light) !important;
+  border-color: var(--accent-gold-light) !important;
+  transform: translateY(-2px);
+}
+
+/* FAQ Card */
+.faq-card {
+  border-radius: var(--radius-lg) !important;
+  margin-bottom: var(--spacing-6);
+  background: linear-gradient(135deg, var(--accent-gold-bg) 0%, var(--white) 100%);
+  border: 1px solid var(--accent-gold) !important;
+}
+
+.faq-card h4 {
+  margin-bottom: var(--spacing-2) !important;
+  font-family: var(--font-primary);
+}
+
+.faq-card .ant-typography {
+  color: var(--text-secondary);
+}
+
+.faq-btn {
+  background: var(--accent-gold) !important;
+  border-color: var(--accent-gold) !important;
+  color: var(--black) !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+.faq-btn:hover {
+  background: var(--accent-gold-light) !important;
+  border-color: var(--accent-gold-light) !important;
+  transform: translateY(-2px);
+}
+
+/* Hours Note */
+.hours-note {
+  border-radius: var(--radius-lg) !important;
+  background: var(--gray-2);
+  border: none !important;
+}
+
+.hours-note-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hours-icon {
+  font-size: 32px;
+  color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+.hours-note-content .ant-typography {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* Map Full Section */
+.map-full-section {
+  padding: 80px 50px;
+  background: var(--white);
+}
+
+.full-map-container {
+  margin-top: var(--spacing-8);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1200px) {
+  .contact-hero .hero-title {
+    font-size: var(--text-4xl) !important;
+  }
+  
+  .contact-section {
+    padding: 60px 30px;
+  }
+  
+  .form-title,
+  .info-title {
+    font-size: var(--text-2xl) !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .contact-hero {
+    height: 45vh;
+  }
+  
+  .contact-hero .hero-title {
+    font-size: var(--text-3xl) !important;
+  }
+  
+  .contact-hero .hero-description {
+    font-size: var(--text-lg) !important;
+  }
+  
+  .contact-section {
+    padding: 50px 30px;
+  }
+  
+  .form-container {
+    padding: var(--spacing-6);
+  }
+  
+  .info-card {
+    padding: var(--spacing-3) !important;
+  }
+  
+  .info-card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding-top: 70px;
+  }
+  
+  .contact-hero {
+    height: 40vh;
+    min-height: 350px;
+  }
+  
+  .contact-hero .hero-title {
+    font-size: var(--text-2xl) !important;
+  }
+  
+  .contact-hero .hero-description {
+    font-size: var(--text-base) !important;
+  }
+  
+  .contact-hero .hero-stats {
+    font-size: var(--text-sm);
+  }
+  
+  .contact-hero .hero-stats .ant-space {
+    flex-direction: column;
+    gap: 8px !important;
+  }
+  
+  .contact-section {
+    padding: 40px 20px;
+  }
+  
+  .form-title,
+  .info-title {
+    font-size: var(--text-xl) !important;
+  }
+  
+  .form-subtitle,
+  .info-subtitle {
+    font-size: var(--text-sm);
+  }
+  
+  .quick-responses {
+    padding: var(--spacing-3);
+  }
+  
+  .quick-tag {
+    font-size: var(--text-xs);
+    padding: 4px 8px;
+  }
+  
+  .social-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .map-container {
+    height: 200px;
+  }
+  
+  .faq-card .ant-card-body {
+    padding: var(--spacing-4) !important;
+  }
+  
+  .faq-card h4 {
+    font-size: var(--text-base) !important;
+  }
+  
+  .text-right {
+    text-align: left !important;
+  }
+  
+  .hours-note-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hours-icon {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-page {
+    padding-top: 60px;
+  }
+  
+  .contact-hero {
+    height: 35vh;
+    min-height: 300px;
+  }
+  
+  .contact-hero .hero-title {
+    font-size: var(--text-xl) !important;
+  }
+  
+  .contact-hero .hero-description {
+    font-size: var(--text-sm) !important;
+  }
+  
+  .contact-hero .hero-stats {
+    display: none;
+  }
+  
+  .contact-section {
+    padding: 30px 15px;
+  }
+  
+  .form-container {
+    padding: var(--spacing-4);
+  }
+  
+  .form-title {
+    font-size: var(--text-lg) !important;
+  }
+  
+  .info-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .info-card-content {
+    align-items: center;
+  }
+  
+  .social-links {
+    gap: 8px !important;
+  }
+  
+  .social-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .map-placeholder h4 {
+    font-size: var(--text-base) !important;
+  }
+  
+  .map-btn {
+    height: 36px !important;
+    padding: 0 16px !important;
+    font-size: var(--text-sm) !important;
+  }
+  
+  .faq-card .ant-card-body {
+    padding: var(--spacing-3) !important;
+  }
+  
+  .faq-card h4 {
+    font-size: var(--text-sm) !important;
+  }
+  
+  .faq-btn {
+    width: 100%;
+  }
+  
+  .hours-note .ant-card-body {
+    padding: var(--spacing-3) !important;
+  }
+  
+  .hours-icon {
+    font-size: 28px;
+  }
+}

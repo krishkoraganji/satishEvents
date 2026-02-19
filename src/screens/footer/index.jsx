@@ -23,7 +23,7 @@ const AppFooter = () => {
         <Row gutter={[48, 32]}>
           <Col xs={24} sm={12} lg={6}>
             <div className="footer-section">
-              <Title level={4}>SatisfEvents</Title>
+              <Title level={4}>SatishEvents</Title>
               <Text className="footer-description">
                 Creating magical moments with exceptional event decorations. 
                 We transform your vision into reality.
@@ -79,7 +79,7 @@ const AppFooter = () => {
                 </li>
                 <li>
                   <MailOutlined />
-                  <span>info@satisfevents.com</span>
+                  <span>info@satishevents.com</span>
                 </li>
               </ul>
             </div>
@@ -107,7 +107,7 @@ const AppFooter = () => {
         <div className="footer-bottom">
           <Row justify="space-between" align="middle">
             <Col>
-              <Text>© 2024 SatisfEvents. All rights reserved.</Text>
+              <Text>© 2026 SatishEvents. All rights reserved.</Text>
             </Col>
             <Col>
               <Space size="middle">

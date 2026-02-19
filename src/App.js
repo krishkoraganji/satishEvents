@@ -23,6 +23,8 @@ import Navbar from './components/navbar/navbar';
 import AppFooter from './screens/footer';
 import Contact from './screens/contact';
 import './globalStyles.css'
+import BirthdayDecor from './screens/birthday';
+import BabyShowerDecor from './screens/babyshower';
 
 function App() {
   return (
@@ -45,8 +47,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/wedding-decor" element={<WeddingDecor />} />
             {/* <Route path="/corporate-events" element={<CorporateEvents />} /> */}
-            {/* <Route path="/birthday-parties" element={<BirthdayParties />} /> */}
-            {/* <Route path="/baby-showers" element={<BabyShowers />} /> */}
+            <Route path="/birthday-parties" element={<BirthdayDecor />} />
+            <Route path="/baby-showers" element={<BabyShowerDecor />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/packages" element={<DecorationPackages />} />
             <Route path="/about" element={<About />} />

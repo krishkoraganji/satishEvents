@@ -35,10 +35,10 @@ const Navbar = () => {
       key: '/wedding-decor', 
       label: <Link to="/wedding-decor">Wedding Decor</Link> 
     },
-    { 
-      key: '/corporate-events', 
-      label: <Link to="/corporate-events">Corporate</Link> 
-    },
+    // { 
+    //   key: '/corporate-events', 
+    //   label: <Link to="/corporate-events">Corporate</Link> 
+    // },
     { 
       key: '/birthday-parties', 
       label: <Link to="/birthday-parties">Birthday</Link> 

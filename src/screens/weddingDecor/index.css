@@ -1,0 +1,684 @@
+/* pages/index.css */
+
+/* ===== Wedding Decor Page Specific Styles ===== */
+.wedding-decor-page {
+  padding-top: 80px; /* Adjust based on your navbar height */
+  overflow-x: hidden;
+  background: var(--bg-primary);
+}
+
+/* ===== Hero Section ===== */
+.wedding-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  max-height: 700px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.wedding-hero .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.wedding-hero .hero-title {
+  color: var(--white) !important;
+  font-size: var(--text-6xl) !important;
+  font-weight: var(--font-bold) !important;
+  margin-bottom: var(--spacing-4) !important;
+  font-family: var(--font-primary) !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.wedding-hero .hero-description {
+  color: rgba(255,255,255,0.9) !important;
+  font-size: var(--text-xl) !important;
+  margin-bottom: var(--spacing-8) !important;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wedding-hero .hero-btn {
+  background: var(--accent-gold) !important;
+  border-color: var(--accent-gold) !important;
+  color: var(--black) !important;
+  font-weight: var(--font-semibold);
+  height: 48px !important;
+  padding: 0 32px !important;
+  font-size: var(--text-base) !important;
+  border-radius: var(--radius-lg) !important;
+  transition: all 0.3s ease;
+}
+
+.wedding-hero .hero-btn:hover {
+  background: var(--accent-gold-light) !important;
+  border-color: var(--accent-gold-light) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(198, 161, 91, 0.3);
+}
+
+/* ===== Section Headers ===== */
+section {
+  padding: 80px 50px;
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-tag {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  padding: 6px 16px;
+  margin-bottom: 16px;
+  background: var(--accent-gold) !important;
+  color: var(--white) !important;
+  border: none !important;
+  display: inline-block;
+  border-radius: 30px;
+}
+
+.section-title {
+  font-size: var(--text-4xl) !important;
+  font-weight: var(--font-bold) !important;
+  margin-bottom: 16px !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-primary) !important;
+}
+
+.section-subtitle {
+  font-size: var(--text-lg) !important;
+  color: var(--text-secondary) !important;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== Categories Section ===== */
+.categories-section {
+  background: linear-gradient(135deg, var(--gray-1) 0%, var(--gray-3) 100%);
+}
+
+.category-card {
+  text-align: center;
+  border-radius: var(--radius-lg) !important;
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.category-icon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-4);
+}
+
+.category-card .ant-card-body {
+  padding: var(--spacing-6) !important;
+}
+
+.category-card h5 {
+  margin-bottom: var(--spacing-2) !important;
+  font-family: var(--font-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.category-card .ant-tag {
+  background: var(--accent-gold) !important;
+  color: var(--white) !important;
+  border: none !important;
+  font-weight: var(--font-semibold);
+  padding: 4px 12px;
+}
+
+/* ===== Packages Section ===== */
+.packages-section {
+  background: var(--white);
+}
+
+.package-card {
+  position: relative;
+  border-radius: var(--radius-lg) !important;
+  overflow: hidden;
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.package-card:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+.package-card.recommended {
+  border: 2px solid var(--accent-gold) !important;
+  transform: scale(1.02);
+}
+
+.recommended-badge {
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  background: var(--accent-gold);
+  color: var(--black);
+  padding: 8px 40px;
+  transform: rotate(45deg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  z-index: 10;
+  box-shadow: var(--shadow-md);
+}
+
+.package-image-wrapper {
+  height: 200px;
+  overflow: hidden;
+}
+
+.package-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.package-card:hover .package-image {
+  transform: scale(1.1);
+}
+
+.package-name {
+  text-align: center;
+  margin: var(--spacing-4) 0 !important;
+  font-family: var(--font-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.package-features {
+  list-style: none;
+  padding: 0 var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.package-features li {
+  margin-bottom: var(--spacing-2);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.package-features .anticon {
+  color: var(--accent-gold);
+  font-size: var(--text-base);
+}
+
+.package-btn {
+  margin: 0 var(--spacing-4) var(--spacing-4);
+  background: var(--accent-gold) !important;
+  border-color: var(--accent-gold) !important;
+  color: var(--black) !important;
+  font-weight: var(--font-semibold);
+  height: 44px !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+.package-btn:hover {
+  background: var(--accent-gold-light) !important;
+  border-color: var(--accent-gold-light) !important;
+  transform: translateY(-2px);
+}
+
+/* ===== Gallery Section ===== */
+.gallery-section {
+  background: var(--gray-2);
+}
+
+.gallery-tabs {
+  margin-bottom: 30px;
+}
+
+.gallery-tabs .ant-tabs-nav {
+  margin-bottom: 30px;
+}
+
+.gallery-tabs .ant-tabs-tab {
+  font-size: var(--text-base);
+  padding: 8px 20px;
+  transition: all 0.3s;
+}
+
+.gallery-tabs .ant-tabs-tab-active {
+  background: var(--accent-gold) !important;
+  border-radius: 30px;
+}
+
+.gallery-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--black) !important;
+}
+
+.gallery-tabs .ant-tabs-ink-bar {
+  display: none;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+.gallery-item-info {
+  color: var(--white);
+  transform: translateY(20px);
+  transition: transform 0.3s;
+  width: 100%;
+}
+
+.gallery-item:hover .gallery-item-info {
+  transform: translateY(0);
+}
+
+.gallery-item-info .ant-tag {
+  margin-bottom: 8px;
+  background: var(--accent-gold) !important;
+  color: var(--black) !important;
+  border: none !important;
+}
+
+.gallery-item-title {
+  color: var(--white) !important;
+  display: block;
+  margin-bottom: 8px;
+  font-size: var(--text-base) !important;
+  font-weight: var(--font-semibold);
+}
+
+.gallery-item-meta {
+  display: flex;
+  gap: 15px;
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.7);
+}
+
+.gallery-item-meta .anticon {
+  margin-right: 4px;
+  color: var(--accent-gold);
+}
+
+.view-all-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.view-all-btn {
+  background: transparent !important;
+  border: 2px solid var(--accent-gold) !important;
+  color: var(--accent-gold) !important;
+  font-weight: var(--font-semibold);
+  height: 48px !important;
+  padding: 0 32px !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+.view-all-btn:hover {
+  background: var(--accent-gold) !important;
+  color: var(--black) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(198, 161, 91, 0.3);
+}
+
+/* ===== Testimonials Section ===== */
+.testimonials-section {
+  background: var(--white);
+}
+
+.testimonial-card {
+  height: 100%;
+  border-radius: var(--radius-lg) !important;
+  transition: all 0.3s;
+  text-align: center;
+  padding: var(--spacing-6) !important;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.testimonial-icon {
+  font-size: 48px;
+  color: var(--accent-gold);
+  margin-bottom: var(--spacing-4);
+}
+
+.testimonial-text {
+  font-size: var(--text-base);
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-4);
+  font-style: italic;
+}
+
+.testimonial-author {
+  border-top: 1px solid var(--border-light);
+  padding-top: var(--spacing-4);
+}
+
+.testimonial-author strong {
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--text-tertiary);
+  font-size: var(--text-sm);
+}
+
+.testimonial-meta .ant-tag {
+  background: var(--accent-gold) !important;
+  color: var(--black) !important;
+  border: none !important;
+  margin: 0 auto 8px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.testimonial-meta .anticon {
+  margin-right: 4px;
+  color: var(--accent-gold);
+}
+
+/* ===== Gallery Modal ===== */
+.gallery-modal .ant-modal-content {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--gray-12);
+}
+
+.gallery-modal .ant-modal-body {
+  padding: 0;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.modal-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-6);
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.modal-info {
+  color: var(--white);
+}
+
+.modal-info h3 {
+  color: var(--white) !important;
+  margin-bottom: 8px !important;
+  font-family: var(--font-primary) !important;
+}
+
+.modal-info .ant-tag {
+  margin-bottom: 8px;
+  background: var(--accent-gold) !important;
+  color: var(--black) !important;
+  border: none !important;
+}
+
+.modal-meta {
+  display: flex;
+  gap: 20px;
+  color: rgba(255,255,255,0.7);
+  font-size: var(--text-sm);
+}
+
+.modal-meta .anticon {
+  margin-right: 4px;
+  color: var(--accent-gold);
+}
+
+.modal-share-btn {
+  background: var(--accent-gold) !important;
+  border-color: var(--accent-gold) !important;
+  color: var(--black) !important;
+  font-weight: var(--font-semibold);
+  border-radius: var(--radius-lg) !important;
+}
+
+.modal-share-btn:hover {
+  background: var(--accent-gold-light) !important;
+  border-color: var(--accent-gold-light) !important;
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1200px) {
+  section {
+    padding: 60px 30px;
+  }
+  
+  .wedding-hero .hero-title {
+    font-size: var(--text-5xl) !important;
+  }
+  
+  .section-title {
+    font-size: var(--text-3xl) !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .wedding-hero {
+    height: 60vh;
+  }
+  
+  .wedding-hero .hero-title {
+    font-size: var(--text-4xl) !important;
+  }
+  
+  .wedding-hero .hero-description {
+    font-size: var(--text-lg) !important;
+  }
+  
+  .package-card.recommended {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .wedding-decor-page {
+    padding-top: 70px;
+  }
+  
+  section {
+    padding: 50px 20px;
+  }
+  
+  .wedding-hero {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .wedding-hero .hero-title {
+    font-size: var(--text-3xl) !important;
+  }
+  
+  .wedding-hero .hero-description {
+    font-size: var(--text-base) !important;
+    padding: 0 20px;
+  }
+  
+  .section-title {
+    font-size: var(--text-2xl) !important;
+  }
+  
+  .section-subtitle {
+    font-size: var(--text-base) !important;
+  }
+  
+  .category-icon {
+    font-size: 36px;
+  }
+  
+  .gallery-item-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .modal-footer {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .modal-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .wedding-decor-page {
+    padding-top: 60px;
+  }
+  
+  section {
+    padding: 40px 15px;
+  }
+  
+  .wedding-hero {
+    height: 40vh;
+    min-height: 350px;
+  }
+  
+  .wedding-hero .hero-title {
+    font-size: var(--text-2xl) !important;
+  }
+  
+  .wedding-hero .hero-description {
+    font-size: var(--text-sm) !important;
+  }
+  
+  .wedding-hero .hero-btn {
+    height: 40px !important;
+    padding: 0 24px !important;
+    font-size: var(--text-sm) !important;
+  }
+  
+  .section-title {
+    font-size: var(--text-xl) !important;
+  }
+  
+  .category-card .ant-card-body {
+    padding: var(--spacing-4) !important;
+  }
+  
+  .category-icon {
+    font-size: 32px;
+    margin-bottom: var(--spacing-2);
+  }
+  
+  .category-card h5 {
+    font-size: var(--text-sm) !important;
+  }
+  
+  .package-features li {
+    font-size: var(--text-xs);
+  }
+  
+  .gallery-tabs .ant-tabs-tab {
+    padding: 6px 12px;
+    font-size: var(--text-sm);
+  }
+  
+  .modal-footer {
+    padding: var(--spacing-4);
+  }
+  
+  .modal-info h3 {
+    font-size: var(--text-lg) !important;
+  }
+}
+
+/* ===== Animation Classes ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}

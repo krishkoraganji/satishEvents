@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Row, Col, Card, Button, Typography, Space, Carousel, 
-  Rate, Tabs, Statistic, Timeline, Tag, Badge, Divider,
+  Tabs, Statistic, Timeline, Tag, Badge, Divider,
   Avatar, List, Modal, Input, Form, Progress, Tooltip,
   Empty, Skeleton, Collapse, Steps, Select
 } from 'antd';
@@ -46,7 +46,19 @@ import {
   RightOutlined,
   PlayCircleOutlined,
   PauseCircleOutlined,
-  EyeOutlined
+  EyeOutlined,
+  HomeOutlined,
+  CoffeeOutlined,
+  MedicineBoxOutlined,
+  WomanOutlined,
+  SunOutlined,
+  RiseOutlined,
+  BookOutlined,
+  SkinOutlined,
+  ToolOutlined,
+  ShopOutlined,
+  FlagOutlined,
+  AudioOutlined
 } from '@ant-design/icons';
 // Import multiple images from your wedding folder
 import w1 from "../../assests/wedding/w1.jpeg";
@@ -129,32 +141,168 @@ const Home = () => {
   const [quoteFormVisible, setQuoteFormVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState('wedding');
 
-  const heroSlides = [
-    {
-      image: w4,
-      title: 'Elegant Wedding Decorations',
-      subtitle: 'Transform your special day into a fairytale',
-      description: 'Luxury wedding setups with attention to every detail',
-      badge: 'Featured',
-      stats: { events: '500+', clients: '450+', cities: '25+' }
-    },
-    {
-      image: w1,
-      title: 'Professional Corporate Events',
-      subtitle: 'Impress your clients with stunning setups',
-      description: 'Corporate galas, conferences, and brand launches',
-      badge: 'Top Rated',
-      stats: { events: '300+', clients: '200+', cities: '15+' }
-    },
-    {
-      image: w2,
-      title: 'Magical Birthday Parties',
-      subtitle: 'Create unforgettable memories',
-      description: 'Themed parties for all ages with custom designs',
-      badge: 'Most Popular',
-      stats: { events: '1000+', clients: '950+', cities: '30+' }
-    }
-  ];
+const heroSlides = [
+  {
+    image: w4,
+    title: 'Elegant Wedding Decorations',
+    subtitle: 'Transform your special day into a fairytale',
+    description: 'Luxury wedding setups with attention to every detail. Mandap decor, floral arrangements, and lighting design.',
+    badge: 'Most Popular',
+    stats: { events: '500+', clients: '480+', cities: '25+' }
+  },
+  {
+    image: w1,
+    title: 'Traditional House Ceremonies',
+    subtitle: 'Bless your new home with traditional elegance',
+    description: 'Grihapravesh, Vastu puja, and house warming ceremonies with authentic traditional decor.',
+    badge: 'Sacred Traditions',
+    stats: { events: '350+', clients: '340+', cities: '20+' }
+  },
+  {
+    image: w2,
+    title: 'Vibrant Haldi Ceremonies',
+    subtitle: 'Yellow-themed pre-wedding celebrations',
+    description: 'Colorful marigold backdrops, brass vessels, and traditional setups for your Haldi ceremony.',
+    badge: 'Trending Now',
+    stats: { events: '280+', clients: '275+', cities: '18+' }
+  },
+  {
+    image: w3,
+    title: 'Half Saree Function',
+    subtitle: 'Celebrate this milestone with elegance',
+    description: 'Traditional stage decorations, floral backdrops, and thoranam setups for Half Saree (Langa Voni) ceremonies.',
+    badge: 'Cultural Special',
+    stats: { events: '200+', clients: '198+', cities: '15+' }
+  },
+  {
+    image: w5,
+    title: 'Respectful Remembrance',
+    subtitle: 'Dignified death anniversary ceremonies',
+    description: 'Peaceful setups with white flowers, traditional elements, and respectful decor for remembrance.',
+    badge: 'With Respect',
+    stats: { events: '150+', clients: '150+', cities: '12+' }
+  },
+  {
+    image: w6,
+    title: 'Professional Corporate Events',
+    subtitle: 'Impress your clients with stunning setups',
+    description: 'Corporate galas, conferences, product launches, and brand events with professional designs.',
+    badge: 'Business Ready',
+    stats: { events: '400+', clients: '350+', cities: '20+' }
+  },
+  {
+    image: w7,
+    title: 'Birthday Parties',
+    subtitle: 'Fun and creative themes for all ages',
+    description: 'Themed decorations, balloon setups, and custom designs for memorable birthday celebrations.',
+    badge: 'Fun Times',
+    stats: { events: '1000+', clients: '980+', cities: '30+' }
+  },
+  {
+    image: w8,
+    title: 'Engagement Celebrations',
+    subtitle: 'Start your journey in style',
+    description: 'Romantic setups, floral arches, and elegant backdrops for your engagement ceremony.',
+    badge: 'Love Stories',
+    stats: { events: '300+', clients: '295+', cities: '18+' }
+  },
+  {
+    image: w9,
+    title: 'Anniversary Celebrations',
+    subtitle: 'Celebrate timeless love stories',
+    description: 'Elegant decorations for wedding anniversaries, vow renewals, and milestone celebrations.',
+    badge: 'Timeless Love',
+    stats: { events: '200+', clients: '195+', cities: '15+' }
+  },
+  {
+    image: w1,
+    title: 'Baby Showers',
+    subtitle: 'Welcome new beginnings with joy',
+    description: 'Pastel themes, gender reveals, and cute decorations for baby showers and Seemantham.',
+    badge: 'New Beginnings',
+    stats: { events: '250+', clients: '248+', cities: '16+' }
+  },
+  {
+    image: w2,
+    title: 'Naming Ceremonies',
+    subtitle: 'Namakaranam celebrations',
+    description: 'Traditional setups, cradle decoration, and family-focused decor for naming ceremonies.',
+    badge: 'Blessings',
+    stats: { events: '180+', clients: '178+', cities: '14+' }
+  },
+  {
+    image: w3,
+    title: 'Ear Piercing Ceremony',
+    subtitle: 'Traditional Karnavedha celebrations',
+    description: 'Child-friendly traditional setups for ear piercing ceremonies with comfort and style.',
+    badge: 'Tradition',
+    stats: { events: '160+', clients: '159+', cities: '13+' }
+  },
+  {
+    image: w4,
+    title: 'Mundan Ceremony',
+    subtitle: 'First hair cutting ceremony',
+    description: 'Comfortable and traditional setups for Mundan ceremonies with child-friendly elements.',
+    badge: 'Sacred Ritual',
+    stats: { events: '150+', clients: '149+', cities: '12+' }
+  },
+  {
+    image: w5,
+    title: 'Thread Ceremony',
+    subtitle: 'Upanayanam sacred rites',
+    description: 'Vedic setups with Yagnashala, traditional pandals, and authentic decorations.',
+    badge: 'Vedic Traditions',
+    stats: { events: '120+', clients: '120+', cities: '10+' }
+  },
+  {
+    image: w6,
+    title: 'Seemantham',
+    subtitle: 'Traditional baby shower',
+    description: 'Beautiful and comfortable setups for Seemantham, honoring expectant mothers.',
+    badge: 'Mother & Baby',
+    stats: { events: '140+', clients: '139+', cities: '12+' }
+  },
+  {
+    image: w7,
+    title: 'Pooja & Religious Events',
+    subtitle: 'Sacred decorations for spiritual occasions',
+    description: 'Temple setups, Vratham decorations, and traditional elements for all religious ceremonies.',
+    badge: 'Divine',
+    stats: { events: '350+', clients: '348+', cities: '22+' }
+  },
+  {
+    image: w8,
+    title: 'Festival Decorations',
+    subtitle: 'Celebrate festivals with grandeur',
+    description: 'Diwali, Dussehra, Sankranti, Ganesh Chaturthi, and all festival decorations.',
+    badge: 'Festive Spirit',
+    stats: { events: '400+', clients: '390+', cities: '25+' }
+  },
+  {
+    image: w9,
+    title: 'Sangeet & Mehendi',
+    subtitle: 'Vibrant pre-wedding celebrations',
+    description: 'Colorful Mehendi setups, Sangeet stages, and entertainment-focused decorations.',
+    badge: 'Celebration',
+    stats: { events: '280+', clients: '276+', cities: '18+' }
+  },
+  {
+    image: w1,
+    title: 'Reception Parties',
+    subtitle: 'Elegant wedding reception decor',
+    description: 'Grand entrance setups, stage decorations, and sophisticated designs for receptions.',
+    badge: 'Grand Affairs',
+    stats: { events: '320+', clients: '315+', cities: '20+' }
+  },
+  {
+    image: w2,
+    title: 'Grihapravesh',
+    subtitle: 'Traditional house warming',
+    description: 'Auspicious decorations for new homes with mango leaves, marigolds, and traditional kolams.',
+    badge: 'New Beginnings',
+    stats: { events: '300+', clients: '298+', cities: '18+' }
+  }
+];
 
  const decorationCategories = [
   {
@@ -167,10 +315,10 @@ const Home = () => {
     items: [
       'Mandap Decor', 'Flower Arrangements', 'Lighting Design', 
       'Table Settings', 'Backdrop Design', 'Welcome Signs',
-      'Aisle Decor', 'Photo Booth'
+      'Aisle Decor', 'Photo Booth', 'Bridal Entry Setup',
+      'Mehendi Function', 'Sangeet Stage', 'Reception Decor'
     ],
     stats: { events: 1000, satisfaction: 98, designers: 30 },
-    price: 'Starting ₹1,50,000',
     features: ['Custom Designs', 'Premium Flowers', 'Expert Team']
   },
   {
@@ -183,10 +331,10 @@ const Home = () => {
     items: [
       'Stage Design', 'Branding Elements', 'Conference Setup',
       'Award Ceremonies', 'Product Launches', 'Trade Shows',
-      'VIP Lounges', 'Backdrop Branding'
+      'VIP Lounges', 'Backdrop Branding', 'Corporate Meetings',
+      'Annual Day Celebrations', 'Press Conferences', 'Team Building Events'
     ],
     stats: { events: 500, satisfaction: 95, designers: 25 },
-    price: 'Starting ₹2,00,000',
     features: ['Brand Integration', 'Corporate Themes', 'Professional Setup']
   },
   {
@@ -199,59 +347,283 @@ const Home = () => {
     items: [
       'Theme Parties', 'Balloon Decor', 'Backdrop Design',
       'Photo Booths', 'Table Settings', 'Lighting Effects',
-      'Prop Rentals', 'Cake Tables'
+      'Prop Rentals', 'Cake Tables', 'Candy Buffets',
+      'Character Themes', 'Milestone Birthdays', 'Surprise Parties'
     ],
     stats: { events: 2000, satisfaction: 99, designers: 35 },
-    price: 'Starting ₹50,000',
     features: ['Age-Appropriate Themes', 'Custom Designs', 'Interactive Elements']
   },
   {
-    key: 'baby',
-    title: 'Baby Showers',
-    icon: <TeamOutlined />,
+    key: 'house',
+    title: 'House Ceremonies',
+    icon: <HomeOutlined />,
     image: w6,
-    description: 'Celebrate new beginnings with style',
-    longDescription: 'Welcome the little one with beautifully designed baby showers featuring pastel colors, cute decorations, and memorable photo opportunities. Serving Vijayawada, Guntur, and surrounding areas with gender reveal and baby shower parties.',
+    description: 'Bless your new home with traditional elegance',
+    longDescription: 'Celebrate Grihapravesh (house warming), Vastu puja, and other home ceremonies with traditional decorations. We create auspicious setups with mango leaves, marigolds, and traditional kolams to welcome prosperity into your new home across Vijayawada and Andhra Pradesh.',
     items: [
-      'Gender Reveal', 'Pastel Themes', 'Cake Tables',
-      'Welcome Signs', 'Balloon Arches', 'Photo Backdrops',
-      'Party Favors', 'Diaper Cakes'
+      'Grihapravesh Setup', 'Vastu Puja Decor', 'Traditional Kolams',
+      'Mango Leaf Torans', 'Marigold Garlands', 'Pooja Room Setup',
+      'Entrance Decor', 'Rangoli Designs', 'Coconut & Fruit Decor',
+      'Sacred Fire Setup', 'Traditional Lamps', 'Blessing Ceremony Setup'
     ],
-    stats: { events: 300, satisfaction: 97, designers: 18 },
-    price: 'Starting ₹40,000',
-    features: ['Sweet Themes', 'Photo Ready', 'Memory Making']
+    stats: { events: 350, satisfaction: 99, designers: 15 },
+    features: ['Traditional Elements', 'Vastu Compliant', 'Sacred Decor']
   },
   {
-    key: 'anniversary',
-    title: 'Anniversary Celebrations',
-    icon: <CrownFilled />,
+    key: 'haldi',
+    title: 'Haldi Ceremonies',
+    icon: <SunOutlined />,
     image: w7,
-    description: 'Celebrate timeless love stories',
-    longDescription: 'Honor years of togetherness with elegant anniversary decorations. Celebrate 25th, 50th anniversaries with grandeur. We serve venues across Vijayawada, Machilipatnam, and coastal Andhra.',
+    description: 'Vibrant and colorful pre-wedding celebrations',
+    longDescription: 'Make your Haldi ceremony Instagram-worthy with our vibrant yellow-themed decorations. From marigold backdrops to traditional brass vessels and floral setups, we create the perfect setting for this joyous pre-wedding ritual.',
     items: [
-      'Vow Renewals', 'Romantic Settings', 'Photo Displays',
-      'Memory Walls', 'Cake Tables', 'Lighting Design',
-      'Flower Arrangements', 'Guest Books'
+      'Yellow Theme Decor', 'Marigold Backdrops', 'Brass Vessel Setup',
+      'Floral Canopies', 'Traditional Seating', 'Flower Showers',
+      'Photo Opportunities', 'Rangoli Designs', 'Turmeric Grinding Setup',
+      'Traditional Props', 'Floating Flowers', 'Family Portrait Setup'
     ],
-    stats: { events: 200, satisfaction: 96, designers: 15 },
-    price: 'Starting ₹50,000',
-    features: ['Romantic Themes', 'Memory Displays', 'Elegant Setup']
+    stats: { events: 400, satisfaction: 98, designers: 20 },
+    features: ['Vibrant Colors', 'Traditional Props', 'Photo Ready']
+  },
+  {
+    key: 'halfsaree',
+    title: 'Half Saree Function',
+    icon: <WomanOutlined />,
+    image: w8,
+    description: 'Celebrate the transition to womanhood',
+    longDescription: 'The Half Saree function (Langa Voni/Chinna) is a significant South Indian ceremony. We create elegant setups with traditional elements, floral decorations, and beautiful backdrops to celebrate this milestone in a young girl\'s life.',
+    items: [
+      'Traditional Stage Setup', 'Floral Backdrops', 'Thoranam Decor',
+      'Seating Arrangements', 'Photo Booth', 'Lighting Design',
+      'Traditional Props', 'Rangoli Competitions', 'Gift Table Setup',
+      'Blessing Ceremony Area', 'Traditional Lamp Lighting', 'Feast Area Decor'
+    ],
+    stats: { events: 250, satisfaction: 99, designers: 18 },
+    features: ['Traditional Elegance', 'Cultural Elements', 'Milestone Celebration']
   },
   {
     key: 'engagement',
     title: 'Engagement Parties',
     icon: <GoldFilled />,
-    image: w8,
+    image: w1,
     description: 'Start your journey in style',
     longDescription: 'Celebrate your engagement with beautiful decorations that set the perfect mood. We create stunning proposal setups at Bungalow, Trendset Gardens, and other premium venues across Vijayawada.',
     items: [
       'Proposal Setup', 'Ring Displays', 'Photo Booths',
       'Table Decor', 'Lighting Effects', 'Floral Arches',
-      'Welcome Signs', 'Party Favors'
+      'Welcome Signs', 'Party Favors', 'Couple Seating',
+      'Romantic Lighting', 'Cake Table', 'Family Photo Area'
     ],
     stats: { events: 350, satisfaction: 98, designers: 20 },
-    price: 'Starting ₹60,000',
     features: ['Romantic Vibes', 'Photo Ready', 'Personalized']
+  },
+  {
+    key: 'anniversary',
+    title: 'Anniversary Celebrations',
+    icon: <CrownFilled />,
+    image: w2,
+    description: 'Celebrate timeless love stories',
+    longDescription: 'Honor years of togetherness with elegant anniversary decorations. Celebrate 25th, 50th anniversaries with grandeur. We serve venues across Vijayawada, Machilipatnam, and coastal Andhra.',
+    items: [
+      'Vow Renewals', 'Romantic Settings', 'Photo Displays',
+      'Memory Walls', 'Cake Tables', 'Lighting Design',
+      'Flower Arrangements', 'Guest Books', 'Number Displays',
+      'Anniversary Countdown', 'Family Portrait Area', 'Surprise Elements'
+    ],
+    stats: { events: 200, satisfaction: 96, designers: 15 },
+    features: ['Romantic Themes', 'Memory Displays', 'Elegant Setup']
+  },
+  {
+    key: 'deathanniversary',
+    title: 'Death Anniversary',
+    icon: <MedicineBoxOutlined />,
+    image: w3,
+    description: 'Respectful and dignified remembrance ceremonies',
+    longDescription: 'We understand the sensitivity of death anniversaries (Tithi/Shraddha ceremonies). Our decor focuses on creating a peaceful, respectful atmosphere with traditional elements, white flowers, and dignified setups for remembrance ceremonies.',
+    items: [
+      'Traditional Setup', 'White Flower Decor', 'Peaceful Ambiance',
+      'Pooja Arrangements', 'Photo Display', 'Offering Tables',
+      'Seating for Guests', 'Sacred Lamp Setup', 'Traditional Torans',
+      'Pandal Decor', 'Charity Event Setup', 'Memorial Area'
+    ],
+    stats: { events: 150, satisfaction: 100, designers: 10 },
+    features: ['Respectful Design', 'Traditional Elements', 'Peaceful Atmosphere']
+  },
+  {
+    key: 'baby',
+    title: 'Baby Showers',
+    icon: <TeamOutlined />,
+    image: w4,
+    description: 'Celebrate new beginnings with style',
+    longDescription: 'Welcome the little one with beautifully designed baby showers featuring pastel colors, cute decorations, and memorable photo opportunities. Serving Vijayawada, Guntur, and surrounding areas with gender reveal and baby shower parties.',
+    items: [
+      'Gender Reveal', 'Pastel Themes', 'Cake Tables',
+      'Welcome Signs', 'Balloon Arches', 'Photo Backdrops',
+      'Party Favors', 'Diaper Cakes', 'Onesie Decor',
+      'Baby Bottle Decor', 'Stork Decor', 'Cradle Decoration'
+    ],
+    stats: { events: 300, satisfaction: 97, designers: 18 },
+    features: ['Sweet Themes', 'Photo Ready', 'Memory Making']
+  },
+  {
+    key: 'pooja',
+    title: 'Pooja & Religious Events',
+    icon: <RiseOutlined />,
+    image: w5,
+    description: 'Sacred decorations for spiritual occasions',
+    longDescription: 'From Satyanarayana Vratham to Navratri celebrations, we provide traditional and sacred decorations for all religious ceremonies. We serve temples, community halls, and homes across Andhra Pradesh.',
+    items: [
+      'Temple Setup', 'Vratham Decor', 'Navratri Golu Setup',
+      'Floral Garlands', 'Traditional Lamps', 'Sacred Kolams',
+      'Fruit & Offering Tables', 'Pandal Decor', 'Deity Backdrops',
+      'Aarti Setup', 'Bhajan Hall Decor', 'Prasad Distribution Area'
+    ],
+    stats: { events: 400, satisfaction: 99, designers: 20 },
+    features: ['Sacred Elements', 'Traditional Authenticity', 'Spiritual Ambiance']
+  },
+  {
+    key: 'naming',
+    title: 'Naming Ceremony',
+    icon: <BookOutlined />,
+    image: w6,
+    description: 'Welcome your little one with tradition',
+    longDescription: 'Namakaranam (naming ceremony) decorations that blend tradition with celebration. We create beautiful setups for this important milestone, focusing on family gatherings and traditional elements.',
+    items: [
+      'Traditional Stage', 'Floral Decor', 'Cradle Decoration',
+      'Name Reveal Setup', 'Photo Backdrop', 'Guest Seating',
+      'Blessing Area', 'Gift Table', 'Traditional Lamps',
+      'Family Portrait Setup', 'Feast Area Decor', 'Baby Photo Display'
+    ],
+    stats: { events: 200, satisfaction: 98, designers: 15 },
+    features: ['Sweet Themes', 'Family Focused', 'Traditional Touch']
+  },
+  {
+    key: 'earpiercing',
+    title: 'Ear Piercing Ceremony',
+    icon: <SkinOutlined />,
+    image: w7,
+    description: 'Traditional Karnavedha celebrations',
+    longDescription: 'Celebrate the traditional ear piercing ceremony (Karnavedha/Karnavedham) with elegant decorations. We create comfortable and beautiful setups for this important ritual in a child\'s life.',
+    items: [
+      'Traditional Setup', 'Comfort Seating', 'Floral Decor',
+      'Ritual Area Decor', 'Photo Backdrop', 'Blessing Ceremony Setup',
+      'Gift Table', 'Traditional Kolams', 'Decoration with Mango Leaves',
+      'Baby-Friendly Setup', 'Family Area', 'Feast Decor'
+    ],
+    stats: { events: 180, satisfaction: 99, designers: 12 },
+    features: ['Child-Friendly', 'Traditional Rituals', 'Comfort Focus']
+  },
+  {
+    key: 'mundan',
+    title: 'Mundan Ceremony',
+    icon: <ToolOutlined />,
+    image: w8,
+    description: 'First hair cutting ceremony decorations',
+    longDescription: 'Mundan (first hair cutting) is an important Hindu ritual. We create welcoming setups that comfort the child while maintaining traditional elegance, with special attention to the ritual area.',
+    items: [
+      'Ritual Chair Decor', 'Traditional Setup', 'Comfort Seating',
+      'Floral Decor', 'Photo Backdrop', 'Blessing Area',
+      'Gift Table', 'Traditional Torans', 'Child-Friendly Elements',
+      'Family Portrait Setup', 'Feast Decor', 'Memory Corner'
+    ],
+    stats: { events: 160, satisfaction: 98, designers: 12 },
+    features: ['Child Comfort', 'Traditional Rituals', 'Family Gathering']
+  },
+  {
+    key: 'thread',
+    title: 'Thread Ceremony',
+    icon: <RiseOutlined />,
+    image: w9,
+    description: 'Sacred Upanayanam celebrations',
+    longDescription: 'Upanayanam (thread ceremony) is a sacred rite of passage. We create traditional setups that respect the solemnity of the occasion while providing beautiful backdrops for family celebrations.',
+    items: [
+      'Yagnashala Setup', 'Traditional Pandals', 'Vedic Theme Decor',
+      'Floral Arrangements', 'Sacred Fire Area', 'Guru Seating',
+      'Family Seating', 'Blessing Ceremony', 'Traditional Kolams',
+      'Veda Path Setup', 'Feast Area Decor', 'Photo Documentation Area'
+    ],
+    stats: { events: 120, satisfaction: 100, designers: 15 },
+    features: ['Vedic Authenticity', 'Traditional Grandeur', 'Sacred Elements']
+  },
+  {
+    key: 'seemantham',
+    title: 'Seemantham',
+    icon: <WomanOutlined />,
+    image: w1,
+    description: 'Traditional baby shower ceremony',
+    longDescription: 'Seemantham (traditional baby shower for expectant mothers) is a significant South Indian ritual. We create beautiful, comfortable setups that honor tradition while celebrating motherhood.',
+    items: [
+      'Traditional Setup', 'Comfort Seating', 'Floral Decor',
+      'Blessing Ceremony Area', 'Photo Backdrop', 'Gift Display',
+      'Traditional Kolams', 'Mango Leaf Decor', 'Sacred Lamp Setup',
+      'Mother\'s Special Chair', 'Family Portrait Area', 'Feast Decor'
+    ],
+    stats: { events: 150, satisfaction: 99, designers: 14 },
+    features: ['Mother-Friendly', 'Traditional Rituals', 'Comfort Focus']
+  },
+  {
+    key: 'housewarming',
+    title: 'Grihapravesh',
+    icon: <HomeOutlined />,
+    image: w2,
+    description: 'Traditional house warming ceremony',
+    longDescription: 'Grihapravesh is an important Vedic ritual for entering a new home. We create auspicious decorations with traditional elements, mango leaves, marigolds, and sacred kolams to welcome prosperity.',
+    items: [
+      'Main Door Torans', 'Traditional Kolams', 'Pooja Room Setup',
+      'Vastu Puja Decor', 'Sacred Fire Area', 'Coconut & Fruit Decor',
+      'Navagraha Setup', 'Entrance Arch', 'Rangoli Competitions',
+      'Neem & Mango Leaves', 'Traditional Lamps', 'Blessing Ceremony Area'
+    ],
+    stats: { events: 200, satisfaction: 99, designers: 15 },
+    features: ['Vastu Compliant', 'Traditional Elements', 'Auspicious Design']
+  },
+  {
+    key: 'festival',
+    title: 'Festival Decorations',
+    icon: <FireFilled />,
+    image: w3,
+    description: 'Celebrate festivals with grandeur',
+    longDescription: 'From Diwali to Dussehra, Sankranti to Ganesh Chaturthi, we provide stunning festival decorations for homes, societies, and community celebrations across Andhra Pradesh.',
+    items: [
+      'Diwali Decor', 'Dussehra Setup', 'Ganesh Pandal Decor',
+      'Sankranti Rangoli', 'Navratri Golu', 'Christmas Decor',
+      'Lighting Design', 'Floral Arrangements', 'Traditional Kolams',
+      'Community Pooja Setup', 'Fireworks Area', 'Festival Photo Booths'
+    ],
+    stats: { events: 500, satisfaction: 98, designers: 25 },
+    features: ['Festive Spirit', 'Cultural Authenticity', 'Community Focus']
+  },
+  {
+    key: 'sangeet',
+    title: 'Sangeet & Mehendi',
+    icon: <AudioOutlined />,
+    image: w4,
+    description: 'Vibrant pre-wedding celebrations',
+    longDescription: 'Create unforgettable memories with our colorful Sangeet and Mehendi decorations. From traditional Mehendi setups to modern Sangeet stages with dance floors and lighting effects.',
+    items: [
+      'Mehendi Setup', 'Sangeet Stage', 'Dance Floor Decor',
+      'Traditional Seating', 'Floral Canopies', 'Lighting Effects',
+      'Photo Booths', 'Mehendi Artist Area', 'Musical Instrument Displays',
+      'Colorful Backdrops', 'Floating Flowers', 'Entertainment Area'
+    ],
+    stats: { events: 300, satisfaction: 98, designers: 22 },
+    features: ['Vibrant Colors', 'Entertainment Focus', 'Traditional Fun']
+  },
+  {
+    key: 'reception',
+    title: 'Reception Parties',
+    icon: <CrownFilled />,
+    image: w5,
+    description: 'Elegant wedding reception decor',
+    longDescription: 'Make your wedding reception a grand affair with our elegant decorations. From couple entrances to cake cutting ceremonies, we create sophisticated settings that impress your guests.',
+    items: [
+      'Couple Entrance Setup', 'Stage Decor', 'Cake Table',
+      'Guest Seating', 'Lighting Design', 'Photo Backdrops',
+      'Welcome Area', 'Gift Table', 'Dining Area Decor',
+      'VIP Lounge', 'Dance Floor', 'Farewell Setup'
+    ],
+    stats: { events: 400, satisfaction: 99, designers: 28 },
+    features: ['Grand Entrance', 'Sophisticated Design', 'Guest Experience']
   }
 ];
 
@@ -259,68 +631,66 @@ const Home = () => {
   {
     title: 'Royal Wedding Setup - Vijayawada',
     image: w1,
-    price: 'Starting ₹1,50,000',
-    rating: 5,
-    reviews: 156,
     location: 'Vijayawada',
     category: 'Wedding',
-    designer: 'Lakshmi Prasad',
+    designer: 'Satish Koraganji',
     features: ['Premium Flowers', 'LED Lighting', 'Custom Mandap']
   },
   {
-    title: 'Corporate Gala Night - Guntur',
+    title: 'Traditional Grihapravesh - Guntur',
     image: w2,
-    price: 'Starting ₹2,00,000',
-    rating: 5,
-    reviews: 112,
     location: 'Guntur',
-    category: 'Corporate',
-    designer: 'Srinivas Rao',
-    features: ['Stage Design', 'Branding', 'VIP Lounge']
+    category: 'House Ceremony',
+    designer: 'Satish Koraganji',
+    features: ['Traditional Torans', 'Kolam Designs', 'Pooja Setup']
   },
   {
-    title: 'Enchanted Birthday - Tenali',
+    title: 'Vibrant Haldi Ceremony - Tenali',
     image: w3,
-    price: 'Starting ₹50,000',
-    rating: 4.8,
-    reviews: 189,
     location: 'Tenali',
-    category: 'Birthday',
-    designer: 'Sunitha Reddy',
-    features: ['Balloon Decor', 'Photo Booth', 'Themed Setup']
+    category: 'Haldi',
+    designer: 'Satish Koraganji',
+    features: ['Marigold Decor', 'Traditional Props', 'Yellow Theme']
   },
   {
-    title: 'Baby Shower Bliss - Machilipatnam',
+    title: 'Half Saree Function - Vijayawada',
     image: w4,
-    price: 'Starting ₹40,000',
-    rating: 4.9,
-    reviews: 98,
-    location: 'Machilipatnam',
-    category: 'Baby Shower',
-    designer: 'Kavita Singh',
-    features: ['Pastel Theme', 'Welcome Signs', 'Cake Table']
-  },
-  {
-    title: 'Golden Anniversary - Vijayawada',
-    image: w5,
-    price: 'Starting ₹75,000',
-    rating: 4.9,
-    reviews: 87,
     location: 'Vijayawada',
-    category: 'Anniversary',
-    designer: 'Ramana Kumar',
-    features: ['Elegant Setup', 'Photo Display', 'Live Music']
+    category: 'Half Saree',
+    designer: 'Satish Koraganji',
+    features: ['Traditional Stage', 'Floral Backdrop', 'Lighting']
   },
   {
-    title: 'Beach Proposal - Mangalagiri',
+    title: 'Respectful Remembrance - Machilipatnam',
+    image: w5,
+    location: 'Machilipatnam',
+    category: 'Death Anniversary',
+    designer: 'Satish Koraganji',
+    features: ['White Flowers', 'Peaceful Setup', 'Traditional Rituals']
+  },
+  {
+    title: 'Upanayanam Ceremony - Mangalagiri',
     image: w6,
-    price: 'Starting ₹70,000',
-    rating: 5,
-    reviews: 63,
     location: 'Mangalagiri',
+    category: 'Thread Ceremony',
+    designer: 'Satish Koraganji',
+    features: ['Yagnashala', 'Vedic Setup', 'Traditional Decor']
+  },
+  {
+    title: 'Naming Ceremony - Vijayawada',
+    image: w7,
+    location: 'Vijayawada',
+    category: 'Naming Ceremony',
+    designer: 'Satish Koraganji',
+    features: ['Cradle Decor', 'Baby Theme', 'Family Setup']
+  },
+  {
+    title: 'Engagement at Trendset - Vijayawada',
+    image: w8,
+    location: 'Vijayawada',
     category: 'Engagement',
-    designer: 'Deepti Sharma',
-    features: ['Sunset Setup', 'Private Venue', 'Photographer']
+    designer: 'Satish Koraganji',
+    features: ['Romantic Setup', 'Floral Arch', 'Lighting']
   }
 ];
 
@@ -330,7 +700,6 @@ const Home = () => {
     event: 'Wedding Client - Vijayawada',
     text: 'The decoration was absolutely stunning! They transformed the venue at Hotel Ilapuram into exactly what we envisioned. Every detail was perfect, from the mandap to the table settings.',
     image: w1,
-    rating: 5,
     date: 'March 2024',
     location: 'Vijayawada'
   },
@@ -339,36 +708,40 @@ const Home = () => {
     event: 'Corporate Event - Guntur',
     text: 'Professional team with amazing creativity. Our annual gala at KKR Gardens was a huge success thanks to their incredible decoration setup. The branding elements were spot on!',
     image: w2,
-    rating: 5,
     date: 'February 2024',
     location: 'Guntur'
   },
   {
-    name: 'Sunitha Reddy',
-    event: 'Birthday Party - Tenali',
-    text: 'My daughter\'s 10th birthday was magical! The theme decoration at our home in Tenali exceeded all expectations. The kids loved the photo booth and balloon decorations.',
+    name: 'Venkateswara Rao',
+    event: 'Grihapravesh - Vijayawada',
+    text: 'Beautiful house warming ceremony decorations. The traditional torans, kolams, and pooja setup were exactly as we wanted. They made our new home feel truly blessed.',
     image: w3,
-    rating: 4.8,
     date: 'January 2024',
-    location: 'Tenali'
-  },
-  {
-    name: 'Vikram & Anjali',
-    event: 'Anniversary - Vijayawada',
-    text: 'Our 25th anniversary was made special by their elegant decorations at our residence in Benz Circle. The rose petals, candlelight, and photo display created such a romantic atmosphere.',
-    image: w4,
-    rating: 5,
-    date: 'December 2023',
     location: 'Vijayawada'
   },
   {
-    name: 'Pavan Kumar',
-    event: 'Engagement - Mangalagiri',
-    text: 'The beach proposal setup at Mangalagiri was perfect! She said yes! Thank you SatisfEvents for creating such a memorable moment.',
+    name: 'Priyanka & Vikram',
+    event: 'Haldi Ceremony - Guntur',
+    text: 'The yellow theme decorations were absolutely gorgeous! Everyone loved the marigold backdrops and traditional props. Made our pre-wedding celebration so memorable.',
+    image: w4,
+    date: 'December 2023',
+    location: 'Guntur'
+  },
+  {
+    name: 'Satyavathi Devi',
+    event: 'Half Saree Function - Tenali',
+    text: 'Perfect setup for my granddaughter\'s Half Saree function. The traditional stage and floral decorations were beautiful. Thank you Satish Koraganji for making this milestone so special.',
     image: w5,
-    rating: 5,
     date: 'November 2023',
-    location: 'Mangalagiri'
+    location: 'Tenali'
+  },
+  {
+    name: 'Narasimha Murty',
+    event: 'Death Anniversary - Vijayawada',
+    text: 'Handled with utmost respect and sensitivity. The white flower decorations created a peaceful atmosphere for our remembrance ceremony. Highly recommended for such occasions.',
+    image: w6,
+    date: 'October 2023',
+    location: 'Vijayawada'
   }
 ];
 
@@ -378,79 +751,93 @@ const Home = () => {
     excerpt: 'Discover the hottest trends in wedding decorations across Andhra Pradesh including sustainable decor, traditional Kalamkari elements, and modern fusion designs.',
     image: w5,
     date: 'March 15, 2024',
-    author: 'Lakshmi Prasad',
+    author: 'Satish Koraganji',
     category: 'Wedding',
     readTime: '5 min',
     views: 1234
   },
   {
-    title: 'Best Venues for Corporate Events in Guntur & Vijayawada',
-    excerpt: 'Essential guide to planning successful corporate events at top venues like KKR Gardens, Ilapuram Hotel, and Andhra Loyola College auditorium.',
+    title: 'Traditional House Ceremony Decorations: A Complete Guide',
+    excerpt: 'Learn about the essential elements for Grihapravesh, Vastu puja, and other house ceremonies. From mango leaf torans to sacred kolams.',
     image: w6,
     date: 'March 10, 2024',
-    author: 'Srinivas Rao',
-    category: 'Corporate',
+    author: 'Satish Koraganji',
+    category: 'House Ceremonies',
     readTime: '7 min',
     views: 987
   },
   {
-    title: 'Traditional vs Modern: Wedding Decor in Coastal Andhra',
-    excerpt: 'Explore the blend of traditional Andhra wedding decor with modern elements that are trending in Vijayawada, Guntur, and Machilipatnam.',
+    title: 'Half Saree Function: Traditions & Modern Trends',
+    excerpt: 'Everything you need to know about planning a Half Saree function. Traditional elements, modern touches, and decoration ideas for this milestone celebration.',
     image: w7,
     date: 'March 5, 2024',
-    author: 'Sunitha Reddy',
-    category: 'Tips',
-    readTime: '4 min',
+    author: 'Satish Koraganji',
+    category: 'Cultural Events',
+    readTime: '6 min',
     views: 1567
+  },
+  {
+    title: 'Respectful Remembrance: Death Anniversary Decoration Ideas',
+    excerpt: 'Guidance on creating dignified and peaceful setups for death anniversaries. Traditional elements, white flower arrangements, and memorial displays.',
+    image: w8,
+    date: 'February 28, 2024',
+    author: 'Satish Koraganji',
+    category: 'Remembrance',
+    readTime: '4 min',
+    views: 876
   }
 ];
 
   const faqs = [
     {
       question: 'How far in advance should I book decoration services?',
-      answer: 'We recommend booking at least 2-3 months in advance for weddings and large events, and 3-4 weeks for smaller celebrations. This ensures we have enough time for planning and sourcing materials.'
+      answer: 'We recommend booking at least 2-3 months in advance for weddings and large events, and 3-4 weeks for smaller celebrations. For house ceremonies and death anniversaries, 2-3 weeks notice is usually sufficient.'
     },
     {
-      question: 'Do you provide custom decoration designs?',
-      answer: 'Yes! We specialize in custom designs tailored to your theme, preferences, and budget. Our team works closely with you to bring your vision to life.'
+      question: 'Do you provide traditional decorations for house ceremonies?',
+      answer: 'Yes! We specialize in traditional decorations for Grihapravesh, Vastu puja, and all house ceremonies. We use authentic elements like mango leaves, marigolds, traditional kolams, and sacred lamps.'
+    },
+    {
+      question: 'Can you handle sensitive events like death anniversaries?',
+      answer: 'Absolutely. We approach death anniversaries with utmost respect and sensitivity. Our decor focuses on creating peaceful, dignified atmospheres with traditional white flower arrangements.'
+    },
+    {
+      question: 'What is included in Half Saree function decorations?',
+      answer: 'Our Half Saree function packages include traditional stage setup, floral backdrops, thoranam decorations, seating arrangements, photo booths, and optional Rangoli competition areas.'
+    },
+    {
+      question: 'Do you provide custom designs for Haldi ceremonies?',
+      answer: 'Yes! We create vibrant yellow-themed setups with marigold backdrops, brass vessels, traditional seating, and plenty of photo opportunities for your Haldi ceremony.'
     },
     {
       question: 'What is your cancellation policy?',
       answer: 'We have a flexible cancellation policy. Full refunds are available up to 30 days before the event, with partial refunds closer to the date.'
-    },
-    {
-      question: 'Do you handle setup and teardown?',
-      answer: 'Absolutely! Our team manages complete setup before your event and teardown afterwards, so you can focus on enjoying your celebration.'
     }
   ];
 
 const galleryImages = [
   { image: w1, title: 'Royal Wedding at Hotel Ilapuram', category: 'Wedding', year: '2024', location: 'Vijayawada' },
   { image: w2, title: 'Corporate Gala at KKR Gardens', category: 'Corporate', year: '2024', location: 'Guntur' },
-  { image: w3, title: 'Birthday Magic at Private Residence', category: 'Birthday', year: '2023', location: 'Tenali' },
-  { image: w4, title: 'Baby Shower at Convention Center', category: 'Baby Shower', year: '2024', location: 'Machilipatnam' },
-  { image: w5, title: 'Golden Anniversary Celebration', category: 'Anniversary', year: '2023', location: 'Vijayawada' },
-  { image: w6, title: 'Befront Engagement Setup', category: 'Engagement', year: '2024', location: 'Mangalagiri' },
-  { image: w7, title: 'Wedding Reception at Benz Circle', category: 'Wedding', year: '2023', location: 'Vijayawada' },
-  { image: w8, title: 'Product Launch at IT Park', category: 'Corporate', year: '2024', location: 'Vijayawada' },
-  { image: w9, title: 'Sweet Sixteen at Hotel Apsara', category: 'Birthday', year: '2023', location: 'Guntur' }
+  { image: w3, title: 'Traditional Grihapravesh', category: 'House Ceremony', year: '2024', location: 'Vijayawada' },
+  { image: w4, title: 'Vibrant Haldi Ceremony', category: 'Haldi', year: '2023', location: 'Guntur' },
+  { image: w5, title: 'Half Saree Function', category: 'Half Saree', year: '2024', location: 'Tenali' },
+  { image: w6, title: 'Peaceful Remembrance', category: 'Death Anniversary', year: '2023', location: 'Vijayawada' },
+  { image: w7, title: 'Upanayanam Ceremony', category: 'Thread Ceremony', year: '2024', location: 'Mangalagiri' },
+  { image: w8, title: 'Naming Ceremony Setup', category: 'Naming', year: '2023', location: 'Vijayawada' },
+  { image: w9, title: 'Engagement at Trendset', category: 'Engagement', year: '2024', location: 'Vijayawada' }
 ];
 
  const teamMembers = [
-  { name: 'Lakshmi Prasad', role: 'Lead Wedding Designer', experience: '12+ years', image: w1, speciality: 'Weddings', location: 'Vijayawada' },
-  { name: 'Srinivas Rao', role: 'Corporate Events Head', experience: '10+ years', image: w2, speciality: 'Corporate', location: 'Guntur' },
-  { name: 'Sunitha Reddy', role: 'Creative Director', experience: '8+ years', image: w3, speciality: 'Birthday & Baby Shower', location: 'Vijayawada' },
-  { name: 'Ramana Kumar', role: 'Technical Head', experience: '7+ years', image: w4, speciality: 'Lighting & Sound', location: 'Tenali' },
-  { name: 'Deepti Sharma', role: 'Engagement Specialist', experience: '6+ years', image: w5, speciality: 'Romantic Setups', location: 'Mangalagiri' }
+  { name: 'Satish Koraganji', role: 'Lead Organizer & Designer', experience: '12+ years', image: w1, speciality: 'All Events', location: 'Vijayawada' }
 ];
 
   const statsData = [
-  { icon: <SmileOutlined />, value: 112, label: 'Happy Clients', suffix: '+' },
-  { icon: <TrophyOutlined />, value: 874, label: 'Events Across AP', suffix: '+' },
-  // { icon: <TeamOutlined />, value: 5, label: 'Local Designers', suffix: '+' },
+  { icon: <SmileOutlined />, value: 1120, label: 'Happy Clients', suffix: '+' },
+  { icon: <TrophyOutlined />, value: 1450, label: 'Events Across AP', suffix: '+' },
+  { icon: <HomeOutlined />, value: 350, label: 'House Ceremonies', suffix: '+' },
   { icon: <GlobalOutlined />, value: 7, label: 'Cities in AP', suffix: '+' },
   { icon: <ClockCircleOutlined />, value: 8, label: 'Years in Vijayawada', suffix: '+' },
-  { icon: <StarOutlined />, value: 98, label: 'Satisfaction Rate', suffix: '%' }
+  { icon: <StarOutlined />, value: 99, label: 'Satisfaction Rate', suffix: '%' }
 ];
 
   const handleGalleryClick = (image) => {
@@ -461,93 +848,75 @@ const galleryImages = [
   return (
     <div className="home-page">
       {/* Hero Section with Fixed Carousel */}
-      {/* Hero Section with Fixed Carousel */}
-<section className="hero-section">
-  <Carousel 
-    autoplay 
-    autoplaySpeed={2000}
-    effect="scroll" 
-    className="hero-carousel"
-    beforeChange={(from, to) => setCurrentSlide(to)}
-  >
-    {heroSlides.map((slide, index) => (
-      <div key={index}>
-        <div className="hero-slide">
-          <div 
-            className="hero-image-wrapper" 
-            style={{ 
-              backgroundImage: `url(${slide.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat'
-            }}
-          >
-            <div className="hero-overlay"></div>
-          </div>
-          <div className="hero-content">
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* {slide.badge && (
-                <div className="hero-badge-wrapper">
-                  <Badge.Ribbon text={slide.badge} color="gold" className="hero-badge">
-                    <div style={{ height: 30, width: 100 }}></div>
-                  </Badge.Ribbon>
+      <section className="hero-section">
+        <Carousel 
+          autoplay 
+          autoplaySpeed={2000}
+          effect="scroll" 
+          className="hero-carousel"
+          beforeChange={(from, to) => setCurrentSlide(to)}
+        >
+          {heroSlides.map((slide, index) => (
+            <div key={index}>
+              <div className="hero-slide">
+                <div 
+                  className="hero-image-wrapper" 
+                  style={{ 
+                    backgroundImage: `url(${slide.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                  }}
+                >
+                  <div className="hero-overlay"></div>
                 </div>
-              )} */}
-              <Title level={1} className="hero-title">
-                {slide.title}
-              </Title>
-              <Title level={3} className="hero-subtitle">
-                {slide.subtitle}
-              </Title>
-              <Paragraph className="hero-description">
-                {slide.description}
-              </Paragraph>
-              <Space size="large" className="hero-buttons">
-                <Button 
-                  type="primary" 
-                  size="large" 
-                  className="hero-btn-primary"
-                  onClick={() => setQuoteFormVisible(true)}
-                >
-                  Get Free Quote
-                </Button>
-                <Button 
-                  size="large" 
-                  className="hero-btn-secondary"
-                  onClick={() => handleGalleryClick(slide)}
-                >
-                  View Gallery
-                </Button>
-              </Space>
-              <div className="hero-stats">
-                <Space size="middle">
-                  <span><EnvironmentOutlined /> {slide.stats.events} Events</span>
-                  <span><UserOutlined /> {slide.stats.clients} Happy Clients</span>
-                  <span><GlobalOutlined /> {slide.stats.cities} Cities</span>
-                </Space>
+                <div className="hero-content">
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    <Title level={1} className="hero-title">
+                      {slide.title}
+                    </Title>
+                    <Title level={3} className="hero-subtitle">
+                      {slide.subtitle}
+                    </Title>
+                    <Paragraph className="hero-description">
+                      {slide.description}
+                    </Paragraph>
+                    <Space size="large" className="hero-buttons">
+                      <Button 
+                        type="primary" 
+                        size="large" 
+                        className="hero-btn-primary"
+                        onClick={() => setQuoteFormVisible(true)}
+                      >
+                        Get Free Quote
+                      </Button>
+                      <Button 
+                        size="large" 
+                        className="hero-btn-secondary"
+                        onClick={() => handleGalleryClick(slide)}
+                      >
+                        View Gallery
+                      </Button>
+                    </Space>
+                    <div className="hero-stats">
+                      <Space size="middle">
+                        <span><EnvironmentOutlined /> {slide.stats.events} Events</span>
+                        <span><UserOutlined /> {slide.stats.clients} Happy Clients</span>
+                        <span><GlobalOutlined /> {slide.stats.cities} Cities</span>
+                      </Space>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-    ))}
-  </Carousel>
-  
-  <div className="slide-indicators">
-    {heroSlides.map((_, index) => (
-      <div 
-        key={index} 
-        className={`indicator ${currentSlide === index ? 'active' : ''}`}
-        onClick={() => setCurrentSlide(index)}
-      />
-    ))}
-  </div>
-</section>
+            </div>
+          ))}
+        </Carousel>
+      </section>
 
       {/* Categories Section with Tabs */}
       <section className="categories-section">
@@ -562,7 +931,7 @@ const galleryImages = [
         <Tabs 
           activeKey={activeCategory} 
           onChange={setActiveCategory}
-          className="category-tabs"
+          // className="category-tabs"
           centered
           size="large"
         >
@@ -631,9 +1000,6 @@ const galleryImages = [
                     </div>
 
                     <div className="category-footer">
-                      <div className="category-price">
-                        <DollarCircleOutlined /> {category.price}
-                      </div>
                       <Button type="primary" size="large" className="category-cta">
                         Explore {category.title}
                       </Button>
@@ -647,6 +1013,14 @@ const galleryImages = [
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
                     className="category-image-wrapper"
+                    onClick={() => handleGalleryClick({ 
+                      image: category.image, 
+                      title: category.title, 
+                      category: category.title,
+                      location: 'Various Locations',
+                      year: '2024'
+                    })}
+                    style={{ cursor: 'pointer' }}
                   >
                     <img 
                       src={category.image} 
@@ -687,6 +1061,8 @@ const galleryImages = [
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                onClick={() => handleGalleryClick(item)}
+                style={{ cursor: 'pointer' }}
               >
                 <Badge.Ribbon 
                   text={item.category} 
@@ -708,11 +1084,6 @@ const galleryImages = [
                     }
                     className="featured-card"
                   >
-                    <div className="card-rating">
-                      <Rate disabled defaultValue={item.rating} allowHalf />
-                      <span className="rating-count">({item.reviews})</span>
-                    </div>
-                    
                     <Title level={4} className="featured-title">{item.title}</Title>
                     
                     <div className="card-designer">
@@ -720,14 +1091,8 @@ const galleryImages = [
                       <span>{item.designer}</span>
                     </div>
 
-                    <div className="card-tags">
-                      {item.features.map((feature, i) => (
-                        <Tag color="geekblue" key={i}>{feature}</Tag>
-                      ))}
-                    </div>
-
                     <div className="card-features">
-                      {item.features.slice(0, 2).map((feature, i) => (
+                      {item.features.map((feature, i) => (
                         <div className="card-feature" key={i}>
                           <CheckCircleOutlined /> {feature}
                         </div>
@@ -735,11 +1100,11 @@ const galleryImages = [
                     </div>
 
                     <div className="card-footer">
-                      <div className="card-price">
-                        <DollarCircleOutlined /> {item.price}
-                      </div>
-                      <Button type="primary" size="small">
-                        View Details
+                      <Button type="primary" size="small" onClick={(e) => {
+                        e.stopPropagation();
+                        handleGalleryClick(item);
+                      }}>
+                        View Image
                       </Button>
                     </div>
                   </Card>
@@ -750,109 +1115,10 @@ const galleryImages = [
         </Row>
 
         <div className="view-all-container">
-          <Button type="primary" size="large" className="view-all-btn">
+          <Button type="primary" size="large" className="view-all-btn" onClick={() => setGalleryModalVisible(true)}>
             View All Decorations <RightOutlined />
           </Button>
         </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="why-us-section">
-        <div className="section-header">
-          <Tag color="gold" className="section-tag">Why Us</Tag>
-          <Title level={2} className="section-title">Why Choose SatisfEvents?</Title>
-          <Paragraph className="section-subtitle">
-            We combine creativity with expertise to create magical moments
-          </Paragraph>
-        </div>
-
-        <Row gutter={[48, 48]} align="middle">
-          <Col xs={24} lg={12}>
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="why-us-content"
-            >
-              <div className="why-us-timeline">
-                <Timeline mode="left" className="why-us-timeline-items">
-                  <Timeline.Item 
-                    dot={<RocketOutlined style={{ fontSize: '24px', color: 'gold' }} />}
-                    label="2014"
-                  >
-                    <Title level={4}>Founded</Title>
-                    <Text className="timeline-desc">Started with a vision to transform event decorations</Text>
-                  </Timeline.Item>
-                  <Timeline.Item 
-                    dot={<TrophyOutlined style={{ fontSize: '24px', color: 'gold' }} />}
-                    label="2017"
-                  >
-                    <Title level={4}>Industry Award</Title>
-                    <Text className="timeline-desc">Received "Best Event Decorator" award</Text>
-                  </Timeline.Item>
-                  <Timeline.Item 
-                    dot={<TeamOutlined style={{ fontSize: '24px', color: 'gold' }} />}
-                    label="2020"
-                  >
-                    <Title level={4}>Expanded Team</Title>
-                    <Text className="timeline-desc">Grew to 50+ expert designers</Text>
-                  </Timeline.Item>
-                  <Timeline.Item 
-                    dot={<GlobalOutlined style={{ fontSize: '24px', color: 'gold' }} />}
-                    label="2024"
-                  >
-                    <Title level={4}>Pan-India Presence</Title>
-                    <Text className="timeline-desc">Serving clients across 30+ cities</Text>
-                  </Timeline.Item>
-                </Timeline>
-              </div>
-
-              <Row gutter={[16, 16]} className="achievement-cards">
-                <Col span={12}>
-                  <Card className="achievement-card">
-                    <div className="achievement-icon"><TrophyOutlined /></div>
-                    <Title level={4} className="achievement-text">10+ Awards</Title>
-                  </Card>
-                </Col>
-                <Col span={12}>
-                  <Card className="achievement-card">
-                    <div className="achievement-icon"><SafetyOutlined /></div>
-                    <Title level={4} className="achievement-text">100% Satisfaction</Title>
-                  </Card>
-                </Col>
-                <Col span={12}>
-                  <Card className="achievement-card">
-                    <div className="achievement-icon"><CustomerServiceOutlined /></div>
-                    <Title level={4} className="achievement-text">24/7 Support</Title>
-                  </Card>
-                </Col>
-                <Col span={12}>
-                  <Card className="achievement-card">
-                    <div className="achievement-icon"><BulbOutlined /></div>
-                    <Title level={4} className="achievement-text">Custom Designs</Title>
-                  </Card>
-                </Col>
-              </Row>
-            </motion.div>
-          </Col>
-          
-          <Col xs={24} lg={12}>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="why-us-image-container"
-            >
-              <img src={w9} alt="Our Team" className="why-us-image" />
-              <div className="experience-badge">
-                <div className="experience-number">10+</div>
-                <div className="experience-text">Years of Excellence</div>
-              </div>
-            </motion.div>
-          </Col>
-        </Row>
       </section>
 
       {/* Process Section */}
@@ -966,7 +1232,7 @@ const galleryImages = [
 
         <Row gutter={[24, 24]} className="testimonials-grid">
           {testimonials.map((testimonial, index) => (
-            <Col xs={24} md={12} lg={6} key={index}>
+            <Col xs={24} md={12} lg={8} key={index}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -979,7 +1245,6 @@ const galleryImages = [
                     <div className="testimonial-meta">
                       <Title level={5}>{testimonial.name}</Title>
                       <Text type="secondary">{testimonial.event}</Text>
-                      <Rate disabled defaultValue={testimonial.rating} allowHalf />
                     </div>
                   </div>
                   <div className="testimonial-content">
@@ -1011,7 +1276,7 @@ const galleryImages = [
 
         <Row gutter={[24, 24]} className="blog-grid">
           {blogPosts.map((post, index) => (
-            <Col xs={24} md={8} key={index}>
+            <Col xs={24} md={6} key={index}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1092,7 +1357,7 @@ const galleryImages = [
                     <PhoneOutlined /> +91 98765 43210
                   </Space>
                   <Space>
-                    <MailOutlined /> info@satisfevents.com
+                    <MailOutlined /> info@satishevents.com
                   </Space>
                   <Space>
                     <WhatsAppOutlined /> +91 98765 43210
@@ -1110,21 +1375,29 @@ const galleryImages = [
       {/* Team Section */}
       <section className="team-section">
         <div className="section-header">
-          <Tag color="gold" className="section-tag">Our Team</Tag>
-          <Title level={2} className="section-title">Meet Our Expert Designers</Title>
+          <Tag color="gold" className="section-tag">Meet Your Designer</Tag>
+          <Title level={2} className="section-title">Satish Koraganji</Title>
           <Paragraph className="section-subtitle">
-            Creative minds behind your beautiful events
+            Lead Organizer & Creative Designer
           </Paragraph>
         </div>
 
-        <Row gutter={[24, 24]}>
+        <Row gutter={[24, 24]} justify="center">
           {teamMembers.map((member, index) => (
-            <Col xs={24} sm={12} md={6} key={index}>
+            <Col xs={24} sm={12} md={8} lg={6} key={index}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                onClick={() => handleGalleryClick({ 
+                  image: member.image, 
+                  title: member.name, 
+                  category: member.role,
+                  location: member.location,
+                  year: '2024'
+                })}
+                style={{ cursor: 'pointer' }}
               >
                 <Card className="team-card">
                   <div className="team-image-wrapper">
@@ -1188,7 +1461,7 @@ const galleryImages = [
               >
                 Get Free Quote
               </Button>
-              <Button size="large" className="cta-btn-secondary">
+              <Button size="large" className="cta-btn-secondary" onClick={() => setGalleryModalVisible(true)}>
                 View Portfolio
               </Button>
             </Space>
@@ -1209,7 +1482,10 @@ const galleryImages = [
       {/* Gallery Modal */}
       <Modal
         visible={galleryModalVisible}
-        onCancel={() => setGalleryModalVisible(false)}
+        onCancel={() => {
+          setGalleryModalVisible(false);
+          setSelectedImage(null);
+        }}
         footer={null}
         width={1200}
         className="gallery-modal"
@@ -1224,11 +1500,13 @@ const galleryImages = [
             <div className="gallery-modal-info">
               <Title level={3}>{selectedImage.title}</Title>
               <Tag color="gold">{selectedImage.category}</Tag>
-              <p>{selectedImage.year}</p>
+              <p>{selectedImage.year} | {selectedImage.location}</p>
+              <Button onClick={() => setSelectedImage(null)}>Back to Gallery</Button>
             </div>
           </div>
         ) : (
           <div className="gallery-modal-grid">
+            <Title level={3}>Our Complete Gallery</Title>
             <Row gutter={[16, 16]}>
               {galleryImages.map((item, index) => (
                 <Col span={8} key={index}>
@@ -1239,6 +1517,7 @@ const galleryImages = [
                     <img src={item.image} alt={item.title} />
                     <div className="gallery-modal-overlay">
                       <span>{item.title}</span>
+                      <Tag color="gold">{item.category}</Tag>
                     </div>
                   </div>
                 </Col>
@@ -1280,9 +1559,23 @@ const galleryImages = [
                 <Option value="wedding">Wedding</Option>
                 <Option value="corporate">Corporate Event</Option>
                 <Option value="birthday">Birthday Party</Option>
-                <Option value="baby">Baby Shower</Option>
-                <Option value="anniversary">Anniversary</Option>
+                <Option value="house">House Ceremony (Grihapravesh)</Option>
+                <Option value="haldi">Haldi Ceremony</Option>
+                <Option value="halfsaree">Half Saree Function</Option>
+                <Option value="deathanniversary">Death Anniversary</Option>
                 <Option value="engagement">Engagement</Option>
+                <Option value="anniversary">Anniversary</Option>
+                <Option value="baby">Baby Shower</Option>
+                <Option value="naming">Naming Ceremony</Option>
+                <Option value="earpiercing">Ear Piercing</Option>
+                <Option value="mundan">Mundan Ceremony</Option>
+                <Option value="thread">Thread Ceremony (Upanayanam)</Option>
+                <Option value="seemantham">Seemantham</Option>
+                <Option value="pooja">Pooja/Religious Event</Option>
+                <Option value="festival">Festival Decoration</Option>
+                <Option value="sangeet">Sangeet/Mehendi</Option>
+                <Option value="reception">Reception Party</Option>
+                <Option value="other">Other Event</Option>
               </Select>
             </Form.Item>
             
@@ -1298,16 +1591,6 @@ const galleryImages = [
                 </Form.Item>
               </Col>
             </Row>
-            
-            <Form.Item label="Budget Range">
-              <Select placeholder="Select budget range">
-                <Option value="<50k">Less than ₹50,000</Option>
-                <Option value="50k-1lac">₹50,000 - ₹1,00,000</Option>
-                <Option value="1lac-2lac">₹1,00,000 - ₹2,00,000</Option>
-                <Option value="2lac-5lac">₹2,00,000 - ₹5,00,000</Option>
-                <Option value=">5lac">More than ₹5,00,000</Option>
-              </Select>
-            </Form.Item>
             
             <Form.Item label="Message">
               <Input.TextArea rows={4} placeholder="Tell us about your requirements..." />
